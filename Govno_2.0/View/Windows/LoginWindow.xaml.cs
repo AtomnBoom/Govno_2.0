@@ -23,5 +23,50 @@ namespace Govno_2._0.View.Windows
         {
             InitializeComponent();
         }
+
+        private void LogBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (RemCb.IsChecked == true)
+            {
+                Properties.Settings.Default.LoginValue = LoginTb.Text;
+                Properties.Settings.Default.PasswordValue = PassPb.Password;
+            }
+            else
+            {
+                Properties.Settings.Default.LoginValue = string.Empty;
+                Properties.Settings.Default.PasswordValue = string.Empty;
+            }
+
+            Properties.Settings.Default.Save();
+        }
+
+        private void RegBtn_Click(object sender, RoutedEventArgs e)
+        {
+            RegistrationWindows regw = new RegistrationWindows();
+            regw.Show();
+            Close();
+        }
+
+        private void ResPassBtn_Click(object sender, RoutedEventArgs e)
+        {
+            RessPassWindow ress = new RessPassWindow();
+            ress.ShowDialog();
+            Close();
+        }
+
+        private void PassPb_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            PassTb.Text = PassPb.Password;
+        }
+
+        private void PassTb_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            PassPb.Password = PassTb.Text;
+        }
+
+        private void PassVisibleBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

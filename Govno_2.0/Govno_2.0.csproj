@@ -68,6 +68,9 @@
     <Compile Include="View\Windows\RegistrationWindows.xaml.cs">
       <DependentUpon>RegistrationWindows.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Windows\RessPassWindow.xaml.cs">
+      <DependentUpon>RessPassWindow.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -108,11 +111,22 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Windows\RessPassWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />
-    <Folder Include="Resources\" />
     <Folder Include="View\Pages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Logo.png" />
+    <Resource Include="Resources\Man.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\hide.png" />
+    <Resource Include="Resources\view.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

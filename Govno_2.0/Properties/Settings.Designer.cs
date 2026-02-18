@@ -26,5 +26,17 @@ namespace Govno_2._0.Properties
                 return defaultInstance;
             }
         }
+
+        public string LoginValue
+        {
+            get { return ((string)(this["LoginValue"])); }
+            set { this["LoginValue"] = value; }
+        }
+
+        public string PasswordValue
+        {
+            get { return ((string)(this["PasswordValue"])); }
+            set { this["PasswordValue"] = value; }
+        }
     }
 }
