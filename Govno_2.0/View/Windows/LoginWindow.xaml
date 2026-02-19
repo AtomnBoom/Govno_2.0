@@ -46,15 +46,15 @@
 
                 <TextBlock Grid.Row="3" Text="Код сотрудника" FontSize="28" FontFamily="Times New Roman" Margin="20 0" VerticalAlignment="Center"/>
                 <Border Grid.Row="4" CornerRadius="20" Background="#E3E3E3" Margin="0 5">
-                    <TextBox Name="LoginTb" Background="Transparent" FontSize="24" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0"/>
+                    <TextBox Name="LoginTb" Background="Transparent" FontSize="24" FontFamily="Times New Roman" VerticalContentAlignment="Center"  BorderThickness="0" Margin="20 0"/>
                 </Border>
 
                 <TextBlock Grid.Row="5" Text="Пароль" FontSize="28" FontFamily="Times New Roman" Margin="20 0" VerticalAlignment="Center"/>
                 <Border Grid.Row="6" CornerRadius="20" Background="#E3E3E3" Margin="0 5">
-                    <PasswordBox Name="PassPb" Background="Transparent" FontSize="24" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0" PasswordChanged="PassPb_PasswordChanged"/>
+                    <PasswordBox Name="PassPb" Background="Transparent" FontSize="24" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0" PasswordChanged="PassPb_PasswordChanged" VerticalContentAlignment="Center"/>
                 </Border>
                 <Border Grid.Row="6" CornerRadius="20" Background="#E3E3E3" Margin="0 5">
-                    <TextBox Name="PassTb" Background="Transparent" FontSize="24" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0" Visibility="Collapsed" TextChanged="PassTb_TextChanged"/>
+                    <TextBox Name="PassTb" Background="Transparent" FontSize="24" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0" Visibility="Collapsed" TextChanged="PassTb_TextChanged"  VerticalContentAlignment="Center"/>
                 </Border>
 
                 <Button Name="PassVisibleBtn" Click="PassVisibleBtn_Click" Grid.Row="6" Background="Transparent" BorderThickness="0" HorizontalAlignment="Right" Height="40" Width="50" Margin="10 0">

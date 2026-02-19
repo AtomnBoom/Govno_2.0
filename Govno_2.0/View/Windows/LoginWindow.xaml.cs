@@ -66,7 +66,8 @@ namespace Govno_2._0.View.Windows
 
         private void PassVisibleBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            PassPb.Visibility = Visibility.Collapsed;
+            PassTb.Visibility = Visibility.Visible;
         }
     }
 }

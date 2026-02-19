@@ -23,5 +23,39 @@ namespace Govno_2._0.View.Windows
         {
             InitializeComponent();
         }
+
+        private void RegBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PassVisibleBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PassVisibl2eBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PassPb_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            PassTb.Text = PassPb.Password;
+        }
+
+        private void PassTb_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            PassPb.Password = PassTb.Text;
+        }
+        private void Pass2Pb_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            PassTb.Text = PassPb.Password;
+        }
+
+        private void Pass2Tb_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            PassPb.Password = PassTb.Text;
+        }
     }
 }
