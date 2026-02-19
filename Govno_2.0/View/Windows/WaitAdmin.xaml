@@ -1,0 +1,27 @@
+﻿<Window x:Class="Govno_2._0.View.Windows.WaitAdmin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Govno_2._0.View.Windows"
+        xmlns:wpfAnimatedGif="http://wpfanimatedgif.codeplex.com"
+        mc:Ignorable="d"
+        Title="WaitAdmin" Height="300" Width="400" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="1" Content="Ожидайте"  FontSize="24" FontFamily="Times New Roman" HorizontalAlignment="Center"/>
+        <Label Grid.Row="2" Content="подтверждения"  FontSize="24" FontFamily="Times New Roman" HorizontalAlignment="Center"/>
+        <Label Grid.Row="3" Content="системным"  FontSize="24" FontFamily="Times New Roman" HorizontalAlignment="Center"/>
+        <Label Grid.Row="4" Content="администратором"  FontSize="24" FontFamily="Times New Roman" HorizontalAlignment="Center"/>
+        <Image Grid.Row="6" Width="100" Source="C:\Users\vboxuser\source\repos\Govno_2.0\Govno_2.0\Resources\waiting.gif" wpfAnimatedGif:ImageBehavior.AnimatedSource="C:\Users\vboxuser\source\repos\Govno_2.0\Govno_2.0\Resources\waiting.gif"/>
+    </Grid>
+</Window>

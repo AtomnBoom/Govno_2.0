@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Govno_2._0.View.Windows"
         mc:Ignorable="d"
-        Title="MainWindows" Height="450" Width="800">
-    <Grid>
-        
+        Title="MainWindows"  Height="900" Width="1200" WindowStartupLocation="CenterScreen">
+    <Grid Background="#ECECEC">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid Background="White">
+            <Image Height="60" Width="120" HorizontalAlignment="Left" Source="C:\Users\vboxuser\source\repos\Govno_2.0\Govno_2.0\Resources\Logo.png" Margin="15 0"/>
+        </Grid>
+        <Frame Name="MainF" Grid.Row="1"/>
     </Grid>
 </Window>

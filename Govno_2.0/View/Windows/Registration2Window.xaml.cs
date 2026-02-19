@@ -15,14 +15,18 @@ using System.Windows.Shapes;
 namespace Govno_2._0.View.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindows.xaml
+    /// Логика взаимодействия для Registration2Window.xaml
     /// </summary>
-    public partial class MainWindows : Window
+    public partial class Registration2Window : Window
     {
-        public MainWindows()
+        public Registration2Window()
         {
             InitializeComponent();
-            
+        }
+
+        private void RegBtn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

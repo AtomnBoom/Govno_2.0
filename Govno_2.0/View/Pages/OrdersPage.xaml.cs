@@ -10,19 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Govno_2._0.View.Windows
+namespace Govno_2._0.View.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindows.xaml
+    /// Логика взаимодействия для OrdersPage.xaml
     /// </summary>
-    public partial class MainWindows : Window
+    public partial class OrdersPage : Page
     {
-        public MainWindows()
+        public OrdersPage()
         {
             InitializeComponent();
-            
         }
     }
 }

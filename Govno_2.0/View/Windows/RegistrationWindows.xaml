@@ -37,7 +37,7 @@
                     <RowDefinition Height="60" />
                 </Grid.RowDefinitions>
 
-                <TextBlock Text="АВТОРИЗАЦИЯ" HorizontalAlignment="Center" FontSize="28" Grid.Row="1" FontFamily="Times New Roman" FontWeight="SemiBold"/>
+                <TextBlock Text="РЕГИСТРАЦИЯ" HorizontalAlignment="Center" FontSize="28" Grid.Row="1" FontFamily="Times New Roman" FontWeight="SemiBold"/>
 
                 <TextBlock Grid.Row="3" Text="Код сотрудника" FontSize="28" FontFamily="Times New Roman" Margin="20 0" VerticalAlignment="Center"/>
                 <Border Grid.Row="4" CornerRadius="20" Background="#E3E3E3" Margin="0 5">
@@ -45,31 +45,37 @@
                 </Border>
 
                 <TextBlock Grid.Row="5" Text="Пароль" FontSize="28" FontFamily="Times New Roman" Margin="20 0" VerticalAlignment="Center"/>
-                <Border Grid.Row="6" CornerRadius="20" Background="#E3E3E3" Margin="0 5">
+                <Border Name="PassP" Grid.Row="6" CornerRadius="20" Background="#E3E3E3" Margin="0 5">
                     <PasswordBox Name="PassPb" Background="Transparent" FontSize="24" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0" PasswordChanged="PassPb_PasswordChanged" VerticalContentAlignment="Center"/>
                 </Border>
-                <Border Grid.Row="6" CornerRadius="20" Background="#E3E3E3" Margin="0 5">
-                    <TextBox Name="PassTb" Background="Transparent" FontSize="24" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0" Visibility="Collapsed" TextChanged="PassTb_TextChanged"  VerticalContentAlignment="Center"/>
-                </Border>
-                
-                <TextBlock Grid.Row="7" Text="Повторите пароль" FontSize="28" FontFamily="Times New Roman" Margin="20 0" VerticalAlignment="Center"/>
-                <Border Grid.Row="8" CornerRadius="20" Background="#E3E3E3" Margin="0 5">
-                    <PasswordBox Name="Pass2Pb" Background="Transparent" FontSize="24" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0" PasswordChanged="Pass2Pb_PasswordChanged" VerticalContentAlignment="Center"/>
-                </Border>
-                <Border Grid.Row="8" CornerRadius="20" Background="#E3E3E3" Margin="0 5">
-                    <TextBox Name="Pass2Tb" Background="Transparent" FontSize="24" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0" Visibility="Collapsed" TextChanged="Pass2Tb_TextChanged" VerticalContentAlignment="Center"/>
+                <Border Name="PassT" Visibility="Collapsed" Grid.Row="6" CornerRadius="20" Background="#E3E3E3" Margin="0 5">
+                    <TextBox Name="PassTb" Background="Transparent" FontSize="24" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0" TextChanged="PassTb_TextChanged"  VerticalContentAlignment="Center"/>
                 </Border>
 
-                <Button Name="PassVisibleBtn" Click="PassVisibleBtn_Click"  Grid.Row="6" Background="Transparent" BorderThickness="0" HorizontalAlignment="Right" Height="40" Width="50" Margin="10 0">
+                <TextBlock Grid.Row="7" Text="Повторите пароль" FontSize="28" FontFamily="Times New Roman" Margin="20 0" VerticalAlignment="Center"/>
+                <Border Name="PassP2" Grid.Row="8" CornerRadius="20" Background="#E3E3E3" Margin="0 5">
+                    <PasswordBox Name="PassPb2" Background="Transparent" FontSize="24" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0" PasswordChanged="Pass2Pb_PasswordChanged" VerticalContentAlignment="Center"/>
+                </Border>
+                <Border Name="PassT2" Visibility="Collapsed" Grid.Row="8" CornerRadius="20" Background="#E3E3E3" Margin="0 5">
+                    <TextBox Name="PassTb2" Background="Transparent" FontSize="24" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0" TextChanged="Pass2Tb_TextChanged"  VerticalContentAlignment="Center"/>
+                </Border>
+
+                <Button Name="PassInvisibleBtn" Click="PassVisibleBtn_Click"  Grid.Row="6" Background="Transparent" BorderThickness="0" HorizontalAlignment="Right" Height="40" Width="50" Margin="10 0" Visibility="Collapsed">
+                    <Image Source="C:\Users\vboxuser\source\repos\Govno_2.0\Govno_2.0\Resources\hide.png"/>
+                </Button>
+                <Button Name="PassVisibleBtn" Click="PassInvisibleBtn_Click"  Grid.Row="6" Background="Transparent" BorderThickness="0" HorizontalAlignment="Right" Height="40" Width="50" Margin="10 0">
                     <Image Source="C:\Users\vboxuser\source\repos\Govno_2.0\Govno_2.0\Resources\view.png"/>
                 </Button>
-                
-                <Button Name="PassVisibl2eBtn" Click="PassVisibl2eBtn_Click"  Grid.Row="8" Background="Transparent" BorderThickness="0" HorizontalAlignment="Right" Height="40" Width="50" Margin="10 0">
+
+                <Button Name="PassInvisible2Btn" Click="PassVisible2Btn_Click"  Grid.Row="8" Background="Transparent" BorderThickness="0" HorizontalAlignment="Right" Height="40" Width="50" Margin="10 0" Visibility="Collapsed">
+                    <Image Source="C:\Users\vboxuser\source\repos\Govno_2.0\Govno_2.0\Resources\hide.png"/>
+                </Button>
+                <Button Name="PassVisible2Btn" Click="PassInvisible2Btn_Click"  Grid.Row="8" Background="Transparent" BorderThickness="0" HorizontalAlignment="Right" Height="40" Width="50" Margin="10 0">
                     <Image Source="C:\Users\vboxuser\source\repos\Govno_2.0\Govno_2.0\Resources\view.png"/>
                 </Button>
 
                 <Border Grid.Row="10" CornerRadius="20" Background="#F70129" Margin="0 5">
-                    <Button Name="RegBtn" Background="Transparent" FontSize="28" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0" Foreground="White" Content="Зарегистрироваться" Click="RegBtn_Click"/>
+                    <Button Name="RegBtn" Background="Transparent" FontSize="28" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0" Foreground="White" Content="Отправить запрос на рассмотрение" Click="RegBtn_Click"/>
                 </Border>
             </Grid>
 

@@ -50,14 +50,17 @@
                 </Border>
 
                 <TextBlock Grid.Row="5" Text="Пароль" FontSize="28" FontFamily="Times New Roman" Margin="20 0" VerticalAlignment="Center"/>
-                <Border Grid.Row="6" CornerRadius="20" Background="#E3E3E3" Margin="0 5">
+                <Border Name="PassP" Grid.Row="6" CornerRadius="20" Background="#E3E3E3" Margin="0 5">
                     <PasswordBox Name="PassPb" Background="Transparent" FontSize="24" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0" PasswordChanged="PassPb_PasswordChanged" VerticalContentAlignment="Center"/>
                 </Border>
-                <Border Grid.Row="6" CornerRadius="20" Background="#E3E3E3" Margin="0 5">
-                    <TextBox Name="PassTb" Background="Transparent" FontSize="24" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0" Visibility="Collapsed" TextChanged="PassTb_TextChanged"  VerticalContentAlignment="Center"/>
+                <Border Name="PassT" Visibility="Collapsed" Grid.Row="6" CornerRadius="20" Background="#E3E3E3" Margin="0 5">
+                    <TextBox Name="PassTb" Background="Transparent" FontSize="24" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0" TextChanged="PassTb_TextChanged"  VerticalContentAlignment="Center"/>
                 </Border>
 
-                <Button Name="PassVisibleBtn" Click="PassVisibleBtn_Click" Grid.Row="6" Background="Transparent" BorderThickness="0" HorizontalAlignment="Right" Height="40" Width="50" Margin="10 0">
+                <Button Name="PassInvisibleBtn" Click="PassVisibleBtn_Click"  Grid.Row="6" Background="Transparent" BorderThickness="0" HorizontalAlignment="Right" Height="40" Width="50" Margin="10 0" Visibility="Collapsed">
+                    <Image Source="C:\Users\vboxuser\source\repos\Govno_2.0\Govno_2.0\Resources\hide.png"/>
+                </Button>
+                <Button Name="PassVisibleBtn" Click="PassInvisibleBtn_Click"  Grid.Row="6" Background="Transparent" BorderThickness="0" HorizontalAlignment="Right" Height="40" Width="50" Margin="10 0">
                     <Image Source="C:\Users\vboxuser\source\repos\Govno_2.0\Govno_2.0\Resources\view.png"/>
                 </Button>
 
@@ -72,7 +75,7 @@
 
                 <Border Grid.Row="14" BorderThickness="1" BorderBrush="#ABABAB"/>
 
-                <Button Name="ResPassBtn" Background="Transparent" Content="Забыли пароль?" Grid.Row="16" FontSize="22" FontFamily="Times New Roman" Opacity="0.5" Click="ResPassBtn_Click"/>
+                <Button Name="ResPassBtn" Background="Transparent" Content="Забыли пароль?" Grid.Row="16" FontSize="22" FontFamily="Times New Roman" Opacity="0.5" Click="ResPassBtn_Click" BorderThickness="0" Width="200"/>
             </Grid>
             
             <Image Grid.Column="2" Source="/Resources/Man.png" Height="400" VerticalAlignment="Bottom"/>

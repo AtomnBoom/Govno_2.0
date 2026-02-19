@@ -5,8 +5,81 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Govno_2._0.View.Windows"
         mc:Ignorable="d"
-        Title="RessPassWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="RessPassWindow" Height="900" Width="1200" WindowStartupLocation="CenterScreen">
+    <Grid Background="#ECECEC">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid Background="White">
+            <Image Height="60" Width="120" HorizontalAlignment="Left" Source="C:\Users\vboxuser\source\repos\Govno_2.0\Govno_2.0\Resources\Logo.png" Margin="15 0"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="130" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="350" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="15" />
+                    <RowDefinition Height="60" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="ВОССТАНОВЛЕНИЕ ПАРОЛЯ" HorizontalAlignment="Center" FontSize="28" Grid.Row="1" FontFamily="Times New Roman" FontWeight="SemiBold"/>
+
+                <TextBlock Grid.Row="3" Text="Код сотрудника" FontSize="28" FontFamily="Times New Roman" Margin="20 0" VerticalAlignment="Center"/>
+                <Border Grid.Row="4" CornerRadius="20" Background="#E3E3E3" Margin="0 5">
+                    <TextBox Name="LoginTb" Background="Transparent" FontSize="24" FontFamily="Times New Roman" VerticalContentAlignment="Center" BorderThickness="0" Margin="20 0"/>
+                </Border>
+
+                <TextBlock Grid.Row="5" Text="Новый пароль" FontSize="28" FontFamily="Times New Roman" Margin="20 0" VerticalAlignment="Center"/>
+                <Border Name="PassP" Grid.Row="6" CornerRadius="20" Background="#E3E3E3" Margin="0 5">
+                    <PasswordBox Name="PassPb" Background="Transparent" FontSize="24" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0" PasswordChanged="PassPb_PasswordChanged" VerticalContentAlignment="Center"/>
+                </Border>
+                <Border Name="PassT" Visibility="Collapsed" Grid.Row="6" CornerRadius="20" Background="#E3E3E3" Margin="0 5">
+                    <TextBox Name="PassTb" Background="Transparent" FontSize="24" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0" TextChanged="PassTb_TextChanged"  VerticalContentAlignment="Center"/>
+                </Border>
+
+                <TextBlock Grid.Row="7" Text="Повторите пароль" FontSize="28" FontFamily="Times New Roman" Margin="20 0" VerticalAlignment="Center"/>
+                <Border Name="PassP2" Grid.Row="8" CornerRadius="20" Background="#E3E3E3" Margin="0 5">
+                    <PasswordBox Name="PassPb2" Background="Transparent" FontSize="24" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0" PasswordChanged="Pass2Pb_PasswordChanged" VerticalContentAlignment="Center"/>
+                </Border>
+                <Border Name="PassT2" Visibility="Collapsed" Grid.Row="8" CornerRadius="20" Background="#E3E3E3" Margin="0 5">
+                    <TextBox Name="PassTb2" Background="Transparent" FontSize="24" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0" TextChanged="Pass2Tb_TextChanged"  VerticalContentAlignment="Center"/>
+                </Border>
+
+                <Button Name="PassInvisibleBtn" Click="PassVisibleBtn_Click"  Grid.Row="6" Background="Transparent" BorderThickness="0" HorizontalAlignment="Right" Height="40" Width="50" Margin="10 0" Visibility="Collapsed">
+                    <Image Source="C:\Users\vboxuser\source\repos\Govno_2.0\Govno_2.0\Resources\hide.png"/>
+                </Button>
+                <Button Name="PassVisibleBtn" Click="PassInvisibleBtn_Click"  Grid.Row="6" Background="Transparent" BorderThickness="0" HorizontalAlignment="Right" Height="40" Width="50" Margin="10 0">
+                    <Image Source="C:\Users\vboxuser\source\repos\Govno_2.0\Govno_2.0\Resources\view.png"/>
+                </Button>
+
+                <Button Name="PassInvisible2Btn" Click="PassVisible2Btn_Click"  Grid.Row="8" Background="Transparent" BorderThickness="0" HorizontalAlignment="Right" Height="40" Width="50" Margin="10 0" Visibility="Collapsed">
+                    <Image Source="C:\Users\vboxuser\source\repos\Govno_2.0\Govno_2.0\Resources\hide.png"/>
+                </Button>
+                <Button Name="PassVisible2Btn" Click="PassInvisible2Btn_Click"  Grid.Row="8" Background="Transparent" BorderThickness="0" HorizontalAlignment="Right" Height="40" Width="50" Margin="10 0">
+                    <Image Source="C:\Users\vboxuser\source\repos\Govno_2.0\Govno_2.0\Resources\view.png"/>
+                </Button>
+
+                <Border Grid.Row="10" CornerRadius="20" Background="#F70129" Margin="0 5">
+                    <Button Name="RessBtn" Background="Transparent" FontSize="28" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0" Foreground="White" Content="Отправить запрос на восстановление пароля" Click="RessBtn_Click"/>
+                </Border>
+            </Grid>
+
+            <Image Grid.Column="2" Source="/Resources/Man.png" Height="400" VerticalAlignment="Bottom"/>
+        </Grid>
     </Grid>
 </Window>

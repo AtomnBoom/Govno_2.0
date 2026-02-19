@@ -46,28 +46,32 @@ namespace Govno_2._0.View.Windows
             regw.Show();
             Close();
         }
-
         private void ResPassBtn_Click(object sender, RoutedEventArgs e)
         {
             RessPassWindow ress = new RessPassWindow();
             ress.ShowDialog();
-            Close();
         }
-
         private void PassPb_PasswordChanged(object sender, RoutedEventArgs e)
         {
             PassTb.Text = PassPb.Password;
         }
-
         private void PassTb_TextChanged(object sender, TextChangedEventArgs e)
         {
             PassPb.Password = PassTb.Text;
         }
-
         private void PassVisibleBtn_Click(object sender, RoutedEventArgs e)
         {
-            PassPb.Visibility = Visibility.Collapsed;
-            PassTb.Visibility = Visibility.Visible;
+            PassP.Visibility = Visibility.Visible;
+            PassT.Visibility = Visibility.Collapsed;
+            PassVisibleBtn.Visibility = Visibility.Visible;
+            PassInvisibleBtn.Visibility = Visibility.Collapsed;
+        }
+        private void PassInvisibleBtn_Click(object sender, RoutedEventArgs e)
+        {
+            PassP.Visibility = Visibility.Collapsed;
+            PassT.Visibility = Visibility.Visible;
+            PassVisibleBtn.Visibility = Visibility.Collapsed;
+            PassInvisibleBtn.Visibility = Visibility.Visible;
         }
     }
 }

@@ -1,0 +1,65 @@
+﻿<Window x:Class="Govno_2._0.View.Windows.Registration2Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Govno_2._0.View.Windows"
+        mc:Ignorable="d"
+        Title="Registration2Window" Height="900" Width="1200" WindowStartupLocation="CenterScreen">
+    <Grid Background="#ECECEC">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid Background="White">
+            <Image Height="60" Width="120" HorizontalAlignment="Left" Source="C:\Users\vboxuser\source\repos\Govno_2.0\Govno_2.0\Resources\Logo.png" Margin="15 0"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="130" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="350" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="15" />
+                    <RowDefinition Height="60" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="РЕГИСТРАЦИЯ" HorizontalAlignment="Center" FontSize="28" Grid.Row="1" FontFamily="Times New Roman" FontWeight="SemiBold"/>
+
+                <TextBlock Grid.Row="3" Text="Код сотрудника" FontSize="28" FontFamily="Times New Roman" Margin="20 0" VerticalAlignment="Center"/>
+                <Border Grid.Row="4" CornerRadius="20" Background="#E3E3E3" Margin="0 5">
+                    <TextBox Name="LoginTb" Background="Transparent" FontSize="24" FontFamily="Times New Roman" VerticalContentAlignment="Center" BorderThickness="0" Margin="20 0"/>
+                </Border>
+
+                <TextBlock Grid.Row="5" Text="Пароль" FontSize="28" FontFamily="Times New Roman" Margin="20 0" VerticalAlignment="Center"/>
+                <Border Name="PassT" Grid.Row="6" CornerRadius="20" Background="#E3E3E3" Margin="0 5">
+                    <TextBox Name="PassTb" Background="Transparent" FontSize="24" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0"  VerticalContentAlignment="Center"/>
+                </Border>
+
+                <TextBlock Grid.Row="7" Text="Повторите пароль" FontSize="28" FontFamily="Times New Roman" Margin="20 0" VerticalAlignment="Center"/>
+                <Border Name="PassT2" Grid.Row="8" CornerRadius="20" Background="#E3E3E3" Margin="0 5">
+                    <TextBox Name="PassTb2" Background="Transparent" FontSize="24" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0"  VerticalContentAlignment="Center"/>
+                </Border>
+
+                <Border Grid.Row="10" CornerRadius="20" Background="#F70129" Margin="0 5">
+                    <Button Name="RegBtn" Background="Transparent" FontSize="28" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0" Foreground="White" Content="Зарегистрироваться" Click="RegBtn_Click"/>
+                </Border>
+            </Grid>
+
+            <Image Grid.Column="2" Source="/Resources/Man.png" Height="400" VerticalAlignment="Bottom"/>
+        </Grid>
+    </Grid>
+</Window>
