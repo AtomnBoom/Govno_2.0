@@ -5,10 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Govno_2._0.View.Windows.Edit"
         mc:Ignorable="d"
-        Title="ChangeMail" Height="450" Width="800" WindowStyle="None" Background="Transparent">
+        Title="ChangeMail" Height="300" Width="500" WindowStyle="None" Background="Transparent">
     <Grid>
         <Border Background="#ECECEC" CornerRadius="50">
-            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+
+                <Label Content="СМЕНА ПАРОЛЯ"  FontSize="20" FontFamily="Times New Roman" HorizontalAlignment="Center" />
+                <Label Grid.Row="1" Content="Авторизация"  FontSize="36" FontFamily="Times New Roman" HorizontalAlignment="Center"/>
+            </Grid>
         </Border>
     </Grid>
 </Window>
