@@ -12,7 +12,7 @@
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
         <Grid Background="White">
-            <Image Height="60" Width="120" HorizontalAlignment="Left" Source="C:\Users\vboxuser\source\repos\Govno_2.0\Govno_2.0\Resources\Logo.png" Margin="15 0"/>
+            <Image Height="60" Width="120" HorizontalAlignment="Left" Source="\Resources\Logo.png" Margin="15 0"/>
         </Grid>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>

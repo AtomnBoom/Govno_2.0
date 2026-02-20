@@ -65,22 +65,34 @@
     <Compile Include="View\Pages\OrdersPage.xaml.cs">
       <DependentUpon>OrdersPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Windows\LoginWindow.xaml.cs">
+    <Compile Include="View\Windows\Edit\ChangeMail.xaml.cs">
+      <DependentUpon>ChangeMail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\Edit\ChangePassword.xaml.cs">
+      <DependentUpon>ChangePassword.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\Edit\ChangePhone.xaml.cs">
+      <DependentUpon>ChangePhone.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\Messages\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\Main\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Windows\MainWindows.xaml.cs">
+    <Compile Include="View\Windows\Main\MainWindows.xaml.cs">
       <DependentUpon>MainWindows.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Windows\Registration2Window.xaml.cs">
+    <Compile Include="View\Windows\Main\Registration2Window.xaml.cs">
       <DependentUpon>Registration2Window.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Windows\RegistrationWindows.xaml.cs">
+    <Compile Include="View\Windows\Main\RegistrationWindows.xaml.cs">
       <DependentUpon>RegistrationWindows.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Windows\RessPassWindow.xaml.cs">
+    <Compile Include="View\Windows\Main\RessPassWindow.xaml.cs">
       <DependentUpon>RessPassWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Windows\WaitAdmin.xaml.cs">
+    <Compile Include="View\Windows\Messages\WaitAdmin.xaml.cs">
       <DependentUpon>WaitAdmin.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -116,27 +128,43 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Windows\LoginWindow.xaml">
+    <Page Include="View\Windows\Edit\ChangeMail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Windows\MainWindows.xaml">
+    <Page Include="View\Windows\Edit\ChangePassword.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Windows\Registration2Window.xaml">
+    <Page Include="View\Windows\Edit\ChangePhone.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Windows\RegistrationWindows.xaml">
+    <Page Include="View\Windows\Messages\Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Windows\RessPassWindow.xaml">
+    <Page Include="View\Windows\Main\LoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Windows\WaitAdmin.xaml">
+    <Page Include="View\Windows\Main\MainWindows.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\Main\Registration2Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\Main\RegistrationWindows.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\Main\RessPassWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\Messages\WaitAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -154,6 +182,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\waiting.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\verified.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -14,11 +14,5 @@ namespace Govno_2._0
     /// </summary>
     public partial class App : Application
     {
-        public static SoapEntities context = new SoapEntities();
-        public static User currentUser {  get; set; }
-    }
-
-    public class User
-    {
     }
 }

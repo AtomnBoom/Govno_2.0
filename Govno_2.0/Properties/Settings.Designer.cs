@@ -37,6 +37,6 @@ namespace Govno_2._0.Properties
         {
             get { return ((string)(this["PasswordValue"])); }
             set { this["PasswordValue"] = value; }
-        }
+        }         
     }
 }

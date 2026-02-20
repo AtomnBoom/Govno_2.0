@@ -28,6 +28,10 @@ namespace Govno_2._0.View.Windows
         {
             WaitAdmin waitAdmin = new WaitAdmin();
             waitAdmin.ShowDialog();
+            if (DialogResult == true)
+            {
+
+            }
             Close();
         }
 

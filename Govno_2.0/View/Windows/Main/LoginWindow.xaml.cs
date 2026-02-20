@@ -22,22 +22,42 @@ namespace Govno_2._0.View.Windows
         public LoginWindow()
         {
             InitializeComponent();
+
+            try
+            {
+                if (Properties.Settings.Default.LoginValue != string.Empty && Properties.Settings.Default.PasswordValue != string.Empty)
+                {
+                    RemCb.IsChecked = true;
+                }
+            }
+            catch { }
         }
 
         private void LogBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (RemCb.IsChecked == true)
+            try
             {
-                Properties.Settings.Default.LoginValue = LoginTb.Text;
-                Properties.Settings.Default.PasswordValue = PassPb.Password;
+                if (RemCb.IsChecked == true)
+                {
+                    Properties.Settings.Default.LoginValue = LoginTb.Text;
+                    Properties.Settings.Default.PasswordValue = PassPb.Password;
+                }
+                else
+                {
+                    Properties.Settings.Default.LoginValue = string.Empty;
+                    Properties.Settings.Default.PasswordValue = string.Empty;
+                }
+                Properties.Settings.Default.Save();
             }
-            else
-            {
-                Properties.Settings.Default.LoginValue = string.Empty;
-                Properties.Settings.Default.PasswordValue = string.Empty;
-            }
+            catch { }
 
-            Properties.Settings.Default.Save();
+            Login login = new Login();
+            login.ShowDialog();
+
+            MainWindows main = new MainWindows();
+            main.Show();
+
+            Close();
         }
 
         private void RegBtn_Click(object sender, RoutedEventArgs e)

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Govno_2._0.View.Windows"
         xmlns:wpfAnimatedGif="http://wpfanimatedgif.codeplex.com"
         mc:Ignorable="d"
-        Title="WaitAdmin" Height="300" Width="400" WindowStartupLocation="CenterScreen">
+        Title="WaitAdmin" Height="300" Width="500" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40" />
@@ -22,6 +22,6 @@
         <Label Grid.Row="2" Content="подтверждения"  FontSize="24" FontFamily="Times New Roman" HorizontalAlignment="Center"/>
         <Label Grid.Row="3" Content="системным"  FontSize="24" FontFamily="Times New Roman" HorizontalAlignment="Center"/>
         <Label Grid.Row="4" Content="администратором"  FontSize="24" FontFamily="Times New Roman" HorizontalAlignment="Center"/>
-        <Image Grid.Row="6" Width="100" Source="C:\Users\vboxuser\source\repos\Govno_2.0\Govno_2.0\Resources\waiting.gif" wpfAnimatedGif:ImageBehavior.AnimatedSource="C:\Users\vboxuser\source\repos\Govno_2.0\Govno_2.0\Resources\waiting.gif"/>
+        <Image Grid.Row="6" Width="100" Source="\Resources\waiting.gif" wpfAnimatedGif:ImageBehavior.AnimatedSource="\Resources\waiting.gif"/>
     </Grid>
 </Window>
