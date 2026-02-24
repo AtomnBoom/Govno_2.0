@@ -6,9 +6,9 @@
         xmlns:local="clr-namespace:Govno_2._0.View.Windows"
         xmlns:wpfAnimatedGif="http://wpfanimatedgif.codeplex.com"
         mc:Ignorable="d"
-        Title="Login" Height="300" Width="500" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="Transparent" BorderThickness="0">
+        Title="Login" Height="300" Width="500" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="Transparent" BorderThickness="0" AllowsTransparency="True">
     <Grid>
-        <Border Background="#ECECEC" CornerRadius="50">
+        <Border Background="#ECECEC" CornerRadius="50" BorderBrush="Black" BorderThickness="1">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50" />
