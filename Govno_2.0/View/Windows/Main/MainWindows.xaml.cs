@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Govno_2._0.View.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,7 +23,7 @@ namespace Govno_2._0.View.Windows
         public MainWindows()
         {
             InitializeComponent();
-            
+            MainF.Navigate(new OrdersPage());    
         }
     }
 }

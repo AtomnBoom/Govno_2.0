@@ -6,22 +6,26 @@
         xmlns:local="clr-namespace:Govno_2._0.View.Windows"
         xmlns:wpfAnimatedGif="http://wpfanimatedgif.codeplex.com"
         mc:Ignorable="d"
-        Title="WaitAdmin" Height="300" Width="500" WindowStartupLocation="CenterScreen">
+        Title="WaitAdmin" Height="300" Width="500" WindowStartupLocation="CenterScreen" Style="{Binding MWindow}" >
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="40" />
-            <RowDefinition Height="35" />
-            <RowDefinition Height="35" />
-            <RowDefinition Height="35" />
-            <RowDefinition Height="35" />
-            <RowDefinition Height="10" />
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="30" />
-        </Grid.RowDefinitions>
-        <Label Grid.Row="1" Content="Ожидайте"  FontSize="24" FontFamily="Times New Roman" HorizontalAlignment="Center"/>
-        <Label Grid.Row="2" Content="подтверждения"  FontSize="24" FontFamily="Times New Roman" HorizontalAlignment="Center"/>
-        <Label Grid.Row="3" Content="системным"  FontSize="24" FontFamily="Times New Roman" HorizontalAlignment="Center"/>
-        <Label Grid.Row="4" Content="администратором"  FontSize="24" FontFamily="Times New Roman" HorizontalAlignment="Center"/>
-        <Image Grid.Row="6" Width="100" Source="\Resources\waiting.gif" wpfAnimatedGif:ImageBehavior.AnimatedSource="\Resources\waiting.gif"/>
+        <Border Background="#ECECEC" CornerRadius="50">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="35" />
+                    <RowDefinition Height="35" />
+                    <RowDefinition Height="35" />
+                    <RowDefinition Height="35" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="30" />
+                </Grid.RowDefinitions>
+                <Label Grid.Row="1" Content="Ожидайте"  FontSize="24" FontFamily="Times New Roman" HorizontalAlignment="Center"/>
+                <Label Grid.Row="2" Content="подтверждения"  FontSize="24" FontFamily="Times New Roman" HorizontalAlignment="Center"/>
+                <Label Grid.Row="3" Content="системным"  FontSize="24" FontFamily="Times New Roman" HorizontalAlignment="Center"/>
+                <Label Grid.Row="4" Content="администратором"  FontSize="24" FontFamily="Times New Roman" HorizontalAlignment="Center"/>
+                <Image Grid.Row="6" Width="100" Source="\Resources\waiting.gif" wpfAnimatedGif:ImageBehavior.AnimatedSource="\Resources\waiting.gif"/>
+            </Grid>
+        </Border>
     </Grid>
 </Window>

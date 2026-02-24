@@ -23,5 +23,11 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style TargetType="Window" x:Name="MWindow">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="WindowStyle" Value="None" />
+        </Style>
     </Application.Resources>
 </Application>

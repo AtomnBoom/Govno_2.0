@@ -7,22 +7,35 @@
         mc:Ignorable="d"
         Title="ChangeMail" Height="300" Width="500" WindowStyle="None" Background="Transparent">
     <Grid>
-        <Border Background="#ECECEC" CornerRadius="50">
+        <Border Background="#ECECEC" CornerRadius="50" Padding="20 5">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*" />
-                    <RowDefinition Height="1*" />
-                    <RowDefinition Height="1*" />
-                    <RowDefinition Height="1*" />
-                    <RowDefinition Height="1*" />
-                    <RowDefinition Height="1*" />
-                    <RowDefinition Height="1*" />
-                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="15" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="15" />
+                    <RowDefinition Height="40" />
                     <RowDefinition Height="1*" />
                 </Grid.RowDefinitions>
 
-                <Label Content="СМЕНА ПАРОЛЯ"  FontSize="20" FontFamily="Times New Roman" HorizontalAlignment="Center" />
-                <Label Grid.Row="1" Content="Авторизация"  FontSize="36" FontFamily="Times New Roman" HorizontalAlignment="Center"/>
+                <Label Content="СМЕНА ПАРОЛЯ"  FontSize="24" FontFamily="Times New Roman" HorizontalAlignment="Center" />
+
+                <TextBlock Grid.Row="2" Text="Новый пароль" FontSize="24" FontFamily="Times New Roman" VerticalAlignment="Bottom"/>
+                <Border Grid.Row="3" CornerRadius="20" Background="#FFD8D8D8" Margin="0 5">
+                    <TextBox Name="NewPassTb" Background="Transparent" FontSize="24" FontFamily="Times New Roman" VerticalContentAlignment="Center"  BorderThickness="0" Margin="20 0"/>
+                </Border>
+
+                <TextBlock Grid.Row="4" Text="Повторите пароль" FontSize="24" FontFamily="Times New Roman" VerticalAlignment="Bottom"/>
+                <Border Grid.Row="5" CornerRadius="20" Background="#FFD8D8D8" Margin="0 5">
+                    <TextBox Name="NewPassAccesTb" Background="Transparent" FontSize="24" FontFamily="Times New Roman" VerticalContentAlignment="Center"  BorderThickness="0" Margin="20 0"/>
+                </Border>
+
+                <Border Grid.Row="7" CornerRadius="20" Background="#F70129" Margin="0 5">
+                    <Button Name="PassChangeBtn" Background="Transparent" FontSize="18" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0" Foreground="White" Content="Сменить пароль" FontWeight="Bold" Click="PassChangeBtn_Click"/>
+                </Border>
             </Grid>
         </Border>
     </Grid>

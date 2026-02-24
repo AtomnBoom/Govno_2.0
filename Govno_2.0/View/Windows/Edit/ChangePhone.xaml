@@ -5,8 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Govno_2._0.View.Windows.Edit"
         mc:Ignorable="d"
-        Title="ChangePhone" Height="450" Width="800">
+        Title="ChangePhone"  Height="300" Width="500" WindowStyle="None" Background="Transparent">
     <Grid>
-        
+        <Border Background="#ECECEC" CornerRadius="50" Padding="20 5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="15" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="15" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+
+                <Label Content="СМЕНА ТЕЛЕФОНА"  FontSize="24" FontFamily="Times New Roman" HorizontalAlignment="Center" />
+
+                <TextBlock Grid.Row="2" Text="Старый телефон" FontSize="24" FontFamily="Times New Roman" VerticalAlignment="Bottom"/>
+                <Border Grid.Row="3" CornerRadius="20" Background="#FFD8D8D8" Margin="0 5">
+                    <TextBox Name="AgePhoneTb" Background="Transparent" FontSize="24" FontFamily="Times New Roman" VerticalContentAlignment="Center"  BorderThickness="0" Margin="20 0"/>
+                </Border>
+
+                <TextBlock Grid.Row="4" Text="Новый телефон" FontSize="24" FontFamily="Times New Roman" VerticalAlignment="Bottom"/>
+                <Border Grid.Row="5" CornerRadius="20" Background="#FFD8D8D8" Margin="0 5">
+                    <TextBox Name="NewPhoneTb" Background="Transparent" FontSize="24" FontFamily="Times New Roman" VerticalContentAlignment="Center"  BorderThickness="0" Margin="20 0"/>
+                </Border>
+
+                <Border Grid.Row="7" CornerRadius="20" Background="#F70129" Margin="0 5">
+                    <Button Name="PhoneChangeBtn" Background="Transparent" FontSize="18" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0" Foreground="White" Content="Сменить телефон" FontWeight="Bold" Click="PhoneChangeBtn_Click"/>
+                </Border>
+            </Grid>
+        </Border>
     </Grid>
 </Window>
