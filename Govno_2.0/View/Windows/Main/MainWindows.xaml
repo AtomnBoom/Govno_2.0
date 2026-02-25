@@ -13,7 +13,29 @@
         </Grid.RowDefinitions>
         <Grid Background="White">
             <Image Height="60" Width="120" HorizontalAlignment="Left" Source="\Resources\Logo.png" Margin="15 0"/>
+            <Button Name="MenuBtn" Click="MenuBtn_Click" Width="70" Background="Transparent"  HorizontalAlignment="Right" BorderThickness="0">
+                <Image Source="\Resources\menubar.png"/>
+            </Button>
         </Grid>
-        <Frame Name="MainF" Grid.Row="1"/>
+        <Border Name="MenuBar" Grid.RowSpan="2" Visibility="Collapsed" HorizontalAlignment="Right" VerticalAlignment="Top" Height="260" Width="350" Background="#F7010D" Opacity="0.9" CornerRadius="0 0 0 100">
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <Button Name="MenuCloseBtn" Click="MenuCloseBtn_Click" BorderThickness="0" Background="Transparent" HorizontalAlignment="Right" Width="70">
+                    <Image Source="\Resources\menu.png"/>
+                </Button>
+                <Button Name="SupportBtn" Click="SupportBtn_Click"  Grid.Row="1" Background="Transparent" FontSize="28" FontFamily="Times New Roman" HorizontalAlignment="Right" BorderThickness="0" Foreground="White" Content="      Техническая поддержка" Width="350" HorizontalContentAlignment="Right"/>
+                <Button Name="ProfilBtn" Click="ProfilBtn_Click" Grid.Row="2" Background="Transparent" FontSize="28" FontFamily="Times New Roman" HorizontalAlignment="Right" BorderThickness="0" Foreground="White" Content="                  Личный кабинет" Width="350" HorizontalContentAlignment="Right"/>
+                <Button Name="SettBtn" Click="SettBtn_Click" Grid.Row="3" Background="Transparent" FontSize="28" FontFamily="Times New Roman" HorizontalAlignment="Right" BorderThickness="0" Foreground="White" Content="                            Настройки" Width="350" HorizontalContentAlignment="Right"/>
+                <Button Name="ExitBtn" Click="ExitBtn_Click" Grid.Row="4" Background="Transparent" FontSize="28" FontFamily="Times New Roman" HorizontalAlignment="Right" BorderThickness="0" Foreground="White" Content="                                   Выйти" Width="350" HorizontalContentAlignment="Right"/>
+            </Grid>
+        </Border>
+        <Frame Name="MainF" Grid.Row="1" />
     </Grid>
 </Window>

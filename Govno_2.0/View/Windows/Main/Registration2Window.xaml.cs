@@ -27,7 +27,15 @@ namespace Govno_2._0.View.Windows
         private void RegBtn_Click(object sender, RoutedEventArgs e)
         {
 
+            WaitAdmin waitAdmin = new WaitAdmin();
+            waitAdmin.ShowDialog();
+            if (DialogResult == true)
+            {
+                
+                RegistrationWindows reg = new RegistrationWindows();
+                reg.Show();
+                this.Close();
+            }
         }
-
     }
 }

@@ -65,6 +65,15 @@
     <Compile Include="View\Pages\OrdersPage.xaml.cs">
       <DependentUpon>OrdersPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Pages\ProfilPage.xaml.cs">
+      <DependentUpon>ProfilPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\SupportPage.xaml.cs">
+      <DependentUpon>SupportPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Windows\Edit\ChangeMail.xaml.cs">
       <DependentUpon>ChangeMail.xaml</DependentUpon>
     </Compile>
@@ -128,6 +137,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Pages\ProfilPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\SettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\SupportPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Windows\Edit\ChangeMail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -185,6 +206,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\verified.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\menubar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\menu.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

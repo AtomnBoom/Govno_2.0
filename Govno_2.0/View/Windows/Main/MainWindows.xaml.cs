@@ -23,7 +23,44 @@ namespace Govno_2._0.View.Windows
         public MainWindows()
         {
             InitializeComponent();
-            MainF.Navigate(new OrdersPage());    
+            App.MainFrame = MainF;
+            App.MainFrame.Navigate(new OrdersPage());
+        }
+
+        private void MenuBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MenuBar.Visibility = Visibility.Visible;
+            MenuBtn.Visibility = Visibility.Collapsed;
+        }
+
+        private void MenuCloseBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MenuBar.Visibility = Visibility.Collapsed;
+            MenuBtn.Visibility = Visibility.Visible;
+        }
+
+        private void ProfilBtn_Click(object sender, RoutedEventArgs e)
+        {
+            App.MainFrame.Navigate(new ProfilPage());
+        }
+
+        private void SupportBtn_Click(object sender, RoutedEventArgs e)
+        {
+            App.MainFrame.Navigate(new SupportPage());
+
+        }
+
+        private void SettBtn_Click(object sender, RoutedEventArgs e)
+        {
+            App.MainFrame.Navigate(new SettingsPage());
+
+        }
+
+        private void ExitBtn_Click(object sender, RoutedEventArgs e)
+        {
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.Show();
+            Close();
         }
     }
 }

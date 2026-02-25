@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace Govno_2._0
 {
@@ -14,5 +15,6 @@ namespace Govno_2._0
     /// </summary>
     public partial class App : Application
     {
+        public static Frame MainFrame { get; set; }
     }
 }

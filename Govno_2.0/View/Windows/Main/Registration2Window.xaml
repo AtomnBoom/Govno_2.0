@@ -31,31 +31,37 @@
                     <RowDefinition Height="60" />
                     <RowDefinition Height="50" />
                     <RowDefinition Height="60" />
-                    <RowDefinition Height="40" />
+                    <RowDefinition Height="50" />
                     <RowDefinition Height="60" />
-                    <RowDefinition Height="15" />
+                    <RowDefinition Height="30" />
                     <RowDefinition Height="60" />
+                    <RowDefinition Height="1*" />
                 </Grid.RowDefinitions>
 
                 <TextBlock Text="РЕГИСТРАЦИЯ" HorizontalAlignment="Center" FontSize="28" Grid.Row="1" FontFamily="Times New Roman" FontWeight="SemiBold"/>
 
-                <TextBlock Grid.Row="3" Text="Код сотрудника" FontSize="28" FontFamily="Times New Roman" Margin="20 0" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="3" Text="Фамилия" FontSize="28" FontFamily="Times New Roman" Margin="20 0" VerticalAlignment="Center"/>
                 <Border Grid.Row="4" CornerRadius="20" Background="#E3E3E3" Margin="0 5">
-                    <TextBox Name="LoginTb" Background="Transparent" FontSize="24" FontFamily="Times New Roman" VerticalContentAlignment="Center" BorderThickness="0" Margin="20 0"/>
+                    <TextBox Name="SnameTb" Background="Transparent" FontSize="24" FontFamily="Times New Roman" VerticalContentAlignment="Center" BorderThickness="0" Margin="20 0"/>
                 </Border>
 
-                <TextBlock Grid.Row="5" Text="Пароль" FontSize="28" FontFamily="Times New Roman" Margin="20 0" VerticalAlignment="Center"/>
-                <Border Name="PassT" Grid.Row="6" CornerRadius="20" Background="#E3E3E3" Margin="0 5">
-                    <TextBox Name="PassTb" Background="Transparent" FontSize="24" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0"  VerticalContentAlignment="Center"/>
+                <TextBlock Grid.Row="5" Text="Имя" FontSize="28" FontFamily="Times New Roman" Margin="20 0" VerticalAlignment="Center"/>
+                <Border Grid.Row="6" CornerRadius="20" Background="#E3E3E3" Margin="0 5">
+                    <TextBox Name="NameTb" Background="Transparent" FontSize="24" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0"  VerticalContentAlignment="Center"/>
                 </Border>
 
-                <TextBlock Grid.Row="7" Text="Повторите пароль" FontSize="28" FontFamily="Times New Roman" Margin="20 0" VerticalAlignment="Center"/>
-                <Border Name="PassT2" Grid.Row="8" CornerRadius="20" Background="#E3E3E3" Margin="0 5">
-                    <TextBox Name="PassTb2" Background="Transparent" FontSize="24" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0"  VerticalContentAlignment="Center"/>
+                <TextBlock Grid.Row="7" Text="Отчество" FontSize="28" FontFamily="Times New Roman" Margin="20 0" VerticalAlignment="Center"/>
+                <Border Grid.Row="8" CornerRadius="20" Background="#E3E3E3" Margin="0 5">
+                    <TextBox Name="LnameTb" Background="Transparent" FontSize="24" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0"  VerticalContentAlignment="Center"/>
                 </Border>
 
-                <Border Grid.Row="10" CornerRadius="20" Background="#F70129" Margin="0 5">
-                    <Button Name="RegBtn" Background="Transparent" FontSize="28" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0" Foreground="White" Content="Зарегистрироваться" Click="RegBtn_Click"/>
+                <TextBlock Grid.Row="9" Text="Дослжность" FontSize="28" FontFamily="Times New Roman" Margin="20 0" VerticalAlignment="Center"/>
+                <Border Grid.Row="10" CornerRadius="20" Background="#E3E3E3" Margin="0 5">
+                    <ComboBox Name="RoleCmb" Background="Transparent" FontSize="24" FontFamily="Times New Roman" BorderThickness="0" Margin="20 0"  VerticalContentAlignment="Center" DisplayMemberPath="{Binding }"/>
+                </Border>
+
+                <Border Grid.Row="12" CornerRadius="20" Background="#F70129" Margin="0 5">
+                    <Button Name="RegBtn" Background="Transparent" FontSize="28" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0" Foreground="White" Content="Отправить запрос" Click="RegBtn_Click"/>
                 </Border>
             </Grid>
 
