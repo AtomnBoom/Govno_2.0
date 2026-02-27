@@ -57,7 +57,7 @@
 
                 <TextBlock Grid.Row="9" Text="Дослжность" FontSize="28" FontFamily="Times New Roman" Margin="20 0" VerticalAlignment="Center"/>
                 <Border Grid.Row="10" CornerRadius="20" Background="#E3E3E3" Margin="0 5">
-                    <ComboBox Name="RoleCmb" Background="Transparent" FontSize="24" FontFamily="Times New Roman" BorderThickness="0" Margin="20 0"  VerticalContentAlignment="Center" DisplayMemberPath="{Binding }"/>
+                    <ComboBox Name="RoleCmb" Background="Transparent" FontSize="24" FontFamily="Times New Roman" BorderThickness="0" Margin="20 0"  VerticalContentAlignment="Center" DisplayMemberPath="{Binding }" />
                 </Border>
 
                 <Border Grid.Row="12" CornerRadius="20" Background="#F70129" Margin="0 5">

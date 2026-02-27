@@ -83,6 +83,12 @@
     <Compile Include="View\Windows\Edit\ChangePhone.xaml.cs">
       <DependentUpon>ChangePhone.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Windows\Edit\EditOrder.xaml.cs">
+      <DependentUpon>EditOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\Edit\ServiceSelect.xaml.cs">
+      <DependentUpon>ServiceSelect.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Windows\Messages\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -161,6 +167,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Windows\Edit\EditOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\Edit\ServiceSelect.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Windows\Messages\Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -212,6 +226,24 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ADD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\imageselect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\REMOVE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Cancel.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
