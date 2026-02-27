@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Govno_2._0.Models;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -16,5 +17,9 @@ namespace Govno_2._0
     public partial class App : Application
     {
         public static Frame MainFrame { get; set; }
+        public static FixitEntities context = new FixitEntities();
+        public static User currentUser {  get; set; }
+        public static Orders currentOrder { get; set; }
+        public static Services currentService { get; set; }
     }
 }
