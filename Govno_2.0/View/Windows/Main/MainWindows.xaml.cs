@@ -60,5 +60,30 @@ namespace Govno_2._0.View.Windows
             MenuBar.Visibility = Visibility.Visible;
             MenuBtn.Visibility = Visibility.Collapsed;
         }
+
+        private void OrderBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainF.Navigate(new OrdersPage());
+        }
+
+        private void OrderListBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PriceBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ClientBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void HistoryBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Govno_2._0.View.Windows.Edit"
         mc:Ignorable="d"
-        Title="ServiceSelect" Height="350" Width="550" WindowStyle="None" Background="Transparent" AllowsTransparency="True">
-    <Border Background="#ECECEC" CornerRadius="50" Padding="20 5" BorderThickness="1">
+        Title="ServiceSelect" Height="350" Width="550" WindowStyle="None" Background="Transparent" AllowsTransparency="True" WindowStartupLocation="CenterScreen">
+    <Border Background="#ECECEC" CornerRadius="50" Padding="20 5" BorderBrush="Black" BorderThickness="1">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="40" />

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,26 +23,37 @@ namespace Govno_2._0.View.Windows.Edit
         public EditOrder()
         {
             InitializeComponent();
+
+            if (App.currentOrder != null)
+            {
+                DeleteBtn.Visibility = Visibility.Visible;
+                SaveBtn.Content = "Сохранить";
+
+
+            }
         }
 
         private void DeleteBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            DialogResult = true;
+            this.Close();
         }
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            DialogResult = true;
+            this.Close();
         }
 
         private void RemoveBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void CancelBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            DialogResult = false;
+            this.Close();
         }
 
         private void AddServiceBtn_Click(object sender, RoutedEventArgs e)
@@ -51,7 +63,9 @@ namespace Govno_2._0.View.Windows.Edit
 
         private void ImageBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.OpenFile();
+            
         }
     }
 }

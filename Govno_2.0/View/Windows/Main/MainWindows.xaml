@@ -11,13 +11,43 @@
             <RowDefinition Height="70" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
+
+        <Frame Name="MainF" Grid.Row="1" NavigationUIVisibility="Hidden" />
+
         <Grid Background="White">
             <Image Height="60" Width="120" HorizontalAlignment="Left" Source="\Resources\Logo.png" Margin="15 0"/>
             <Button Name="MenuBtn" MouseEnter="MenuBtn_MouseEnter" Width="70" Background="Transparent"  HorizontalAlignment="Right" BorderThickness="0">
                 <Image Source="\Resources\menubar.png"/>
             </Button>
         </Grid>
-        <Border Name="MenuBar" Grid.RowSpan="2" Visibility="Collapsed" HorizontalAlignment="Right" VerticalAlignment="Top" Height="260" Width="350" Background="#F7010D" Opacity="0.9" CornerRadius="0 0 0 100" MouseLeave="MenuBar_MouseLeave">
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="100" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.05*" />
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="1.1*" />
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="0.9*" />
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="0.7*" />
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="1.1*" />
+                </Grid.ColumnDefinitions>
+                <Button Name="OrderBtn" Content="Добавить заказ" Style="{StaticResource NemuBtn}" Click="OrderBtn_Click"/>
+                <Button Name="OrderListBtn" Style="{StaticResource NemuBtn}" Content="Лист Ожидания" Grid.Column="2" Click="OrderListBtn_Click"/>
+                <Button Name="PriceBtn" Style="{StaticResource NemuBtn}" Content="Прайс Лист" Grid.Column="4" Click="PriceBtn_Click"/>
+                <Button Name="ClientBtn" Style="{StaticResource NemuBtn}" Content="Клиенты" Grid.Column="6" Click="ClientBtn_Click"/>
+                <Button Name="HistoryBtn" Style="{StaticResource NemuBtn}" Content="История заказов" Grid.Column="8" Click="HistoryBtn_Click"/>
+            </Grid>
+        </Grid>
+        
+        <Border Name="MenuBar" Grid.RowSpan="2" Visibility="Collapsed" HorizontalAlignment="Right" VerticalAlignment="Top" Height="260" Width="350" Background="#F7010D" CornerRadius="0 0 0 100" MouseLeave="MenuBar_MouseLeave" Grid.Column="2">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="70" />
@@ -35,6 +65,5 @@
                 <Button Name="ExitBtn" Click="ExitBtn_Click" Grid.Row="4" Background="Transparent" FontSize="28" FontFamily="Times New Roman" HorizontalAlignment="Right" BorderThickness="0" Foreground="White" Content="                                   Выйти" Width="350" HorizontalContentAlignment="Right"/>
             </Grid>
         </Border>
-        <Frame Name="MainF" Grid.Row="1" NavigationUIVisibility="Hidden" />
     </Grid>
 </Window>
