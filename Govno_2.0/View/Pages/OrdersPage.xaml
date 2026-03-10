@@ -5,10 +5,89 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Govno_2._0.View.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="OrdersPage" Height="830" Width="1200">
+      d:DesignHeight="830" d:DesignWidth="1200"
+      Title="OrdersPage">
 
     <Grid >
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+
+        <Border Name="HideAdd" Grid.Row="1" HorizontalAlignment="Right" Background="#F70129" Width="140" Margin="0 35 0 0" CornerRadius="30 0 0 0" MouseEnter="HideAdd_MouseEnter"/>
+
+        <Border Name="VisibleAdd"  Grid.Row="1" HorizontalAlignment="Right" Background="#F70129" Width="140" CornerRadius="30 0 0 0" Visibility="Collapsed" MouseLeave="VisibleAdd_MouseLeave">
+            <Button Name="AddOrderBtn" Background="Transparent" Content="Добавить" FontSize="18" FontFamily="Times New Roman"  BorderThickness="0" Foreground="White" FontWeight="Bold" Click="AddOrderBtn_Click"/>
+        </Border>
+
+        <Grid Grid.RowSpan="2">
+            <ListViewItem Name="OrdersLv">
+                <StackPanel Orientation="Vertical">
+                    <Border CornerRadius="50" Height="180" Width="1150" Background="#D0D0D0" Margin="15" HorizontalAlignment="Center">
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="80" />
+                            </Grid.ColumnDefinitions>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="250" />
+                                    <ColumnDefinition Width="15" />
+                                    <ColumnDefinition Width="1*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40" />
+                                    <RowDefinition Height="40" />
+                                    <RowDefinition Height="1*" />
+                                </Grid.RowDefinitions>
+
+                                <Border Grid.RowSpan="3" CornerRadius="50">
+                                    <Image Source="{Binding}"/>
+                                </Border>
+                                <Border Background="#F70129" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="30" CornerRadius="0 0 15 15">
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                        <TextBlock Text="Дата:" FontSize="18" FontFamily="Times New Roman" FontWeight="Bold" Foreground="white"/>
+                                        <TextBlock Text="{Binding ,StringFormat=dd.MM}" FontSize="18" FontFamily="Times New Roman" FontWeight="Bold" Foreground="white"/>
+                                    </StackPanel>
+                                </Border>
+                                <TextBlock Name="OrderNumTbl" Grid.ColumnSpan="3" Text="Заказ №" HorizontalAlignment="Center"  FontSize="32" FontFamily="Times New Roman" Foreground="#F70129" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding}" Grid.Row="1" Grid.Column="2" FontSize="32" FontFamily="Times New Roman" FontWeight="Bold"/>
+
+                                <Grid Grid.Column="2" Grid.Row="2">
+                                    <ScrollViewer Grid.Row="4" VerticalScrollBarVisibility="Auto">
+                                        <ItemsControl Name="ServicesList" ItemsSource="{Binding }">
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
+                                                    <StackPanel Orientation="Horizontal" Margin="0,2">
+                                                        <Button Tag="{Binding Id}" Name="RemoveBtn" BorderThickness="0" Background="Transparent" Click="RemoveBtn_Click">
+                                                            <Image Source="/Resources/REMOVE.png" HorizontalAlignment="Center"/>
+                                                        </Button>
+                                                        <TextBlock Text="{Binding Name}" FontSize="16" FontFamily="Times New Roman" Grid.Column="1"/>
+                                                    </StackPanel>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                    </ScrollViewer>
+                                </Grid>
+                            </Grid>
+
+                            <Grid Grid.Column="1" Margin="0 20 15 20">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*" />
+                                    <RowDefinition Height="15" />
+                                    <RowDefinition Height="1*" />
+                                </Grid.RowDefinitions>
+                                <Button Name="EditBtn" Background="Transparent" BorderThickness="0">
+                                    <Image Source="/Resources/Delete.png"/>
+                                </Button>
+                                <Button Name="AcceptBtn" Background="Transparent" Grid.Row="2" BorderThickness="0">
+                                    <Image Source="/Resources/ADD.png"/>
+                                </Button>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </StackPanel>
+            </ListViewItem>
+        </Grid>
     </Grid>
 </Page>

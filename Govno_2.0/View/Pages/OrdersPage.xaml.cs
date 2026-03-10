@@ -24,5 +24,22 @@ namespace Govno_2._0.View.Pages
         {
             InitializeComponent();
         }
+
+        private void AddOrderBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void HideAdd_MouseEnter(object sender, MouseEventArgs e)
+        {
+            VisibleAdd.Visibility= Visibility.Visible;
+            HideAdd.Visibility= Visibility.Collapsed;
+        }
+
+        private void VisibleAdd_MouseLeave(object sender, MouseEventArgs e)
+        {
+            VisibleAdd.Visibility = Visibility.Collapsed;
+            HideAdd.Visibility = Visibility.Visible;
+        }
     }
 }

@@ -66,8 +66,9 @@
                         <ColumnDefinition Width="1*" />
                     </Grid.ColumnDefinitions>
 
+                    <Button Name="ImageBtn" Grid.RowSpan="5" Background="Transparent" Click="ImageBtn_Click"/>
                     <Border Grid.RowSpan="5" BorderThickness="1" BorderBrush="Black">
-                        <Image Source="/Resources/imageselect.png" Height="70"/>
+                        <Image Name="ImageBlock" Source="/Resources/imageselect.png" Height="70"/>
                     </Border>
 
                     <Grid Grid.Column="2" Grid.ColumnSpan="4">

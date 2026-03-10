@@ -48,5 +48,10 @@ namespace Govno_2._0.View.Windows.Edit
         {
 
         }
+
+        private void ImageBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
