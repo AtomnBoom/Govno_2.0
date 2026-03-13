@@ -26,6 +26,7 @@ namespace Govno_2._0.Models
         public int Client { get; set; }
         public int Status { get; set; }
         public byte[] Photo { get; set; }
+        public Nullable<decimal> TotalPrice { get; set; }
     
         public virtual Clients Clients { get; set; }
         public virtual StatusOrders StatusOrders { get; set; }

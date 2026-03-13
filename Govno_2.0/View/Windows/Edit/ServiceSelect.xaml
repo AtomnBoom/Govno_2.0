@@ -45,7 +45,7 @@
                 </Grid.ColumnDefinitions>
                 <TextBlock Text="Название -" FontSize="20" FontFamily="Times New Roman" Background="Transparent" VerticalAlignment="Center"/>
                 <Border Grid.Column="1" Background="White" CornerRadius="15" Margin="0 5">
-                    <ComboBox Name="NameServiceCmb" BorderThickness="0" FontSize="16" Height="30" FontFamily="Times New Roman" Background="Transparent" VerticalAlignment="Center" Margin="15 0" SelectionChanged="NameServiceCmb_SelectionChanged"/>
+                    <ComboBox Name="NameServiceCmb" BorderThickness="0" FontSize="16" Height="30" FontFamily="Times New Roman"  Background="Transparent" VerticalAlignment="Center" Margin="15 0" SelectionChanged="NameServiceCmb_SelectionChanged"/>
                 </Border>
             </Grid>
 

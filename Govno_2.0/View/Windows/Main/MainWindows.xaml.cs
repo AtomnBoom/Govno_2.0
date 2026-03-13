@@ -68,22 +68,22 @@ namespace Govno_2._0.View.Windows
 
         private void OrderListBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            MainF.Navigate(new OrderListPage());
         }
 
         private void PriceBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            MainF.Navigate(new OrdersPage());
         }
 
         private void ClientBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            MainF.Navigate(new OrdersPage());
         }
 
         private void HistoryBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            MainF.Navigate(new OrdersPage());
         }
     }
 }

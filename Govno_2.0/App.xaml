@@ -57,25 +57,40 @@
         <Style TargetType="ComboBox">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontFamily" Value="Times New Roman"/>
+            <Setter Property="FontSize" Value="16"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ComboBox">
                         <Grid>
                             <ToggleButton IsChecked="{Binding IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}"
-                                  ClickMode="Press">
+                                  ClickMode="Press"
+                                  Background="{TemplateBinding Background}"
+                                  Foreground="{TemplateBinding Foreground}">
                                 <ToggleButton.Template>
                                     <ControlTemplate TargetType="ToggleButton">
-                                        <Grid Background="Transparent">
-                                            <ContentPresenter Content="{TemplateBinding Content}"
-                                                      ContentTemplate="{TemplateBinding ContentTemplate}"/>
-                                            <Path Data="M0,0 L4,4 L8,0" 
-                                          Fill="{TemplateBinding Foreground}"
-                                          HorizontalAlignment="Right"
-                                          VerticalAlignment="Center"
-                                          Margin="0,0,5,0"/>
-                                        </Grid>
+                                        <Border Background="{TemplateBinding Background}" 
+                                        Padding="5,0">
+                                            <Grid>
+                                                <ContentPresenter Content="{TemplateBinding Content}"
+                                                          ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                          VerticalAlignment="Center"
+                                                          HorizontalAlignment="Left"/>
+                                                <Path Data="M0,0 L4,4 L8,0" 
+                                              Fill="{TemplateBinding Foreground}"
+                                              HorizontalAlignment="Right"
+                                              VerticalAlignment="Center"
+                                              Margin="0,0,5,0"/>
+                                            </Grid>
+                                        </Border>
                                     </ControlTemplate>
                                 </ToggleButton.Template>
+                                <ContentPresenter Content="{TemplateBinding SelectionBoxItem}"
+                                          ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                          ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+                                          Margin="5,0,20,0"
+                                          VerticalAlignment="Center"/>
                             </ToggleButton>
 
                             <Popup IsOpen="{TemplateBinding IsDropDownOpen}" 

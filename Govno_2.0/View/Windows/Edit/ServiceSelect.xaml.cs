@@ -34,9 +34,9 @@ namespace Govno_2._0.View.Windows.Edit
         {
             var groups = App.context.SGroup.ToList();
 
-            GroupSelectCmb.ItemsSource = groups;
             GroupSelectCmb.DisplayMemberPath = "Name";
             GroupSelectCmb.SelectedValuePath = "ID";
+            GroupSelectCmb.ItemsSource = groups;
 
             if (groups.Count > 0)
                 GroupSelectCmb.SelectedIndex = 0;
@@ -44,9 +44,7 @@ namespace Govno_2._0.View.Windows.Edit
 
         private void LoadServices()
         {
-            allServices = App.context.Services
-                .Include("SGroup")
-                .ToList();
+            allServices = App.context.Services.Include("SGroup").ToList();
 
             FilterServicesByGroup();
         }
@@ -61,9 +59,9 @@ namespace Govno_2._0.View.Windows.Edit
                 .Where(s => s.GoupName == selectedGroupId)
                 .ToList();
 
-            NameServiceCmb.ItemsSource = filteredServices;
             NameServiceCmb.DisplayMemberPath = "Name";
             NameServiceCmb.SelectedValuePath = "ID";
+            NameServiceCmb.ItemsSource = filteredServices;
 
             if (filteredServices.Count > 0)
                 NameServiceCmb.SelectedIndex = 0;
