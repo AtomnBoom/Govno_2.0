@@ -1,0 +1,54 @@
+﻿<Window x:Class="Govno_2._0.View.Windows.Edit.AddClientWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Govno_2._0.View.Windows.Edit"
+        mc:Ignorable="d"
+        Title="AddClient" Height="280" Width="450" WindowStyle="None" Background="Transparent" AllowsTransparency="True" WindowStartupLocation="CenterScreen">
+    <Border Background="#ECECEC" CornerRadius="50" Padding="20 5" BorderBrush="Black" BorderThickness="1">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="15" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+
+            <Button Name="CancelBtn" BorderThickness="0" Background="Transparent" Click="CancelBtn_Click" HorizontalAlignment="Left" Margin="15 3">
+                <Image Source="/Resources/Cancel.png"/>
+            </Button>
+
+            <Label Content="Новый Клиент" FontSize="24" FontFamily="Times New Roman" HorizontalAlignment="Center" Foreground="red"/>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="ФИО -" FontSize="20" FontFamily="Times New Roman" Background="Transparent" VerticalAlignment="Center"/>
+                <Border Grid.Column="1" Background="White" CornerRadius="15" Margin="0 5">
+                    <TextBox Name="FullNameTxt" BorderThickness="0" Background="Transparent" Margin="15 0" FontSize="16"/>
+                </Border>
+            </Grid>
+
+            <Grid Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="90" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Телефон -" FontSize="20" FontFamily="Times New Roman" Background="Transparent" VerticalAlignment="Center"/>
+                <Border Grid.Column="1" Background="White" CornerRadius="15" Margin="0 5">
+                    <TextBox Name="PhoneTxt" BorderThickness="0" Background="Transparent" Margin="15 0" FontSize="16" MaxLength="12"/>
+                </Border>
+            </Grid>
+
+            <Border Grid.Row="6" CornerRadius="20" Background="#F70129" Margin="80 10">
+                <Button Name="AddBtn" Background="Transparent" FontSize="18" FontFamily="Times New Roman" BorderThickness="0" Foreground="White" Content="Добавить клиента" FontWeight="Bold" Click="AddBtn_Click"/>
+            </Border>
+        </Grid>
+    </Border>
+</Window>

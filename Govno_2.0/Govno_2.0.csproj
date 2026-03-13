@@ -111,14 +111,17 @@
     <Compile Include="View\Pages\OrdersPage.xaml.cs">
       <DependentUpon>OrdersPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Pages\ProfilPage.xaml.cs">
+    <Compile Include="View\Pages\MenuBar\ProfilPage.xaml.cs">
       <DependentUpon>ProfilPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Pages\SettingsPage.xaml.cs">
+    <Compile Include="View\Pages\MenuBar\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Pages\SupportPage.xaml.cs">
+    <Compile Include="View\Pages\MenuBar\SupportPage.xaml.cs">
       <DependentUpon>SupportPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\Edit\AddClientWindow.xaml.cs">
+      <DependentUpon>AddClientWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Windows\Edit\ChangeMail.xaml.cs">
       <DependentUpon>ChangeMail.xaml</DependentUpon>
@@ -131,6 +134,9 @@
     </Compile>
     <Compile Include="View\Windows\Edit\EditOrder.xaml.cs">
       <DependentUpon>EditOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\Edit\SelectClientWindow.xaml.cs">
+      <DependentUpon>SelectClientWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Windows\Edit\ServiceSelect.xaml.cs">
       <DependentUpon>ServiceSelect.xaml</DependentUpon>
@@ -196,15 +202,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Pages\ProfilPage.xaml">
+    <Page Include="View\Pages\MenuBar\ProfilPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Pages\SettingsPage.xaml">
+    <Page Include="View\Pages\MenuBar\SettingsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Pages\SupportPage.xaml">
+    <Page Include="View\Pages\MenuBar\SupportPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\Edit\AddClientWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -221,6 +231,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Windows\Edit\EditOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\Edit\SelectClientWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -257,7 +271,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="AppData\" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Logo.png" />
     <Resource Include="Resources\Man.png" />
@@ -294,21 +310,23 @@
     <Resource Include="Resources\Cancel.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\Edit.png" />
+    <Resource Include="Resources\Ready.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
       <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <Resource Include="Resources\Edit.png" />
-    <Resource Include="Resources\Ready.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

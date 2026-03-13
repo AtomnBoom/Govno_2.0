@@ -15,14 +15,15 @@
         </EntityType>
         <EntityType Name="Orders">
           <Key>
-            <PropertyRef Name="Number" />
+            <PropertyRef Name="ID" />
           </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
           <Property Name="Number" Type="int" Nullable="false" />
           <Property Name="DateCreate" Type="date" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Client" Type="int" Nullable="false" />
           <Property Name="Status" Type="int" Nullable="false" />
-          <Property Name="Photo" Type="varbinary(max)" />
+          <Property Name="Photo" Type="image" />
         </EntityType>
         <EntityType Name="OrdersServices">
           <Key>
@@ -102,12 +103,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_OrdersServices_Orders">
+        <Association Name="FK_OrdersServices_Orders1">
           <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
           <End Role="OrdersServices" Type="Self.OrdersServices" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Orders">
-              <PropertyRef Name="Number" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="OrdersServices">
               <PropertyRef Name="OrderId" />
@@ -167,7 +168,7 @@
             <End Role="StatusOrders" EntitySet="StatusOrders" />
             <End Role="Orders" EntitySet="Orders" />
           </AssociationSet>
-          <AssociationSet Name="FK_OrdersServices_Orders" Association="Self.FK_OrdersServices_Orders">
+          <AssociationSet Name="FK_OrdersServices_Orders1" Association="Self.FK_OrdersServices_Orders1">
             <End Role="Orders" EntitySet="Orders" />
             <End Role="OrdersServices" EntitySet="OrdersServices" />
           </AssociationSet>
@@ -200,8 +201,9 @@
         </EntityType>
         <EntityType Name="Orders">
           <Key>
-            <PropertyRef Name="Number" />
+            <PropertyRef Name="ID" />
           </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
           <Property Name="Number" Type="Int32" Nullable="false" />
           <Property Name="DateCreate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
@@ -210,7 +212,7 @@
           <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Clients" Relationship="Self.FK_Orders_Clients" FromRole="Orders" ToRole="Clients" />
           <NavigationProperty Name="StatusOrders" Relationship="Self.FK_Orders_StatusOrders" FromRole="Orders" ToRole="StatusOrders" />
-          <NavigationProperty Name="OrdersServices" Relationship="Self.FK_OrdersServices_Orders" FromRole="Orders" ToRole="OrdersServices" />
+          <NavigationProperty Name="OrdersServices" Relationship="Self.FK_OrdersServices_Orders1" FromRole="Orders" ToRole="OrdersServices" />
         </EntityType>
         <EntityType Name="OrdersServices">
           <Key>
@@ -219,7 +221,7 @@
           <Property Name="ID" Type="Int32" Nullable="false" />
           <Property Name="OrderId" Type="Int32" Nullable="false" />
           <Property Name="ServiceId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Orders" Relationship="Self.FK_OrdersServices_Orders" FromRole="OrdersServices" ToRole="Orders" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_OrdersServices_Orders1" FromRole="OrdersServices" ToRole="Orders" />
           <NavigationProperty Name="Services" Relationship="Self.FK_OrdersServices_Services" FromRole="OrdersServices" ToRole="Services" />
         </EntityType>
         <EntityType Name="Services">
@@ -298,12 +300,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_OrdersServices_Orders">
+        <Association Name="FK_OrdersServices_Orders1">
           <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
           <End Role="OrdersServices" Type="Self.OrdersServices" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Orders">
-              <PropertyRef Name="Number" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="OrdersServices">
               <PropertyRef Name="OrderId" />
@@ -363,7 +365,7 @@
             <End Role="StatusOrders" EntitySet="StatusOrders" />
             <End Role="Orders" EntitySet="Orders" />
           </AssociationSet>
-          <AssociationSet Name="FK_OrdersServices_Orders" Association="Self.FK_OrdersServices_Orders">
+          <AssociationSet Name="FK_OrdersServices_Orders1" Association="Self.FK_OrdersServices_Orders1">
             <End Role="Orders" EntitySet="Orders" />
             <End Role="OrdersServices" EntitySet="OrdersServices" />
           </AssociationSet>
@@ -398,6 +400,7 @@
           <EntitySetMapping Name="Orders">
             <EntityTypeMapping TypeName="FixitModel.Orders">
               <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Number" ColumnName="Number" />
                 <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
                 <ScalarProperty Name="Name" ColumnName="Name" />

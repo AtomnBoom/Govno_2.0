@@ -19,6 +19,7 @@ namespace Govno_2._0.Models
             this.OrdersServices = new HashSet<OrdersServices>();
         }
     
+        public int ID { get; set; }
         public int Number { get; set; }
         public System.DateTime DateCreate { get; set; }
         public string Name { get; set; }

@@ -15,7 +15,7 @@
                     <RowDefinition Height="25" />
                     <RowDefinition Height="5" />
                     <RowDefinition Height="auto" />
-                    <RowDefinition Height="18" />
+                    <RowDefinition Height="17" />
                     <RowDefinition Height="1*" />
                     <RowDefinition Height="200" />
                 </Grid.RowDefinitions>
@@ -26,19 +26,20 @@
 
                 <Label Content="Заказ №"  FontSize="24" FontFamily="Times New Roman" HorizontalAlignment="Center" Foreground="red"/>
 
-                <TextBox Text="Заголовок(наименование услуг)" FontSize="20" FontFamily="Times New Roman" Grid.Row="1" Background="Transparent" HorizontalAlignment="Center" BorderThickness="0"/>
+                <TextBox Name="TitleTB" Text="Заголовок(наименование услуг)" FontSize="20" FontFamily="Times New Roman" Grid.Row="1" Background="Transparent" HorizontalAlignment="Center" BorderThickness="0"/>
 
                 <TextBlock Text="Перечень выбранных услуг:" FontSize="20" FontFamily="Times New Roman" Grid.Row="2" Background="Transparent" HorizontalAlignment="Left"/>
 
                 <ScrollViewer Grid.Row="4" VerticalScrollBarVisibility="Auto">
-                    <ItemsControl Name="ServicesList" ItemsSource="{Binding }">
+                    <ItemsControl Name="ServicesList">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal" Margin="0,2">
-                                    <Button Tag="{Binding Id}" Name="RemoveBtn" BorderThickness="0" Background="Transparent" Click="RemoveBtn_Click">
+                                    <Button Name="RemoveBtn" BorderThickness="0" Background="Transparent" Click="RemoveBtn_Click" Height="19">
                                         <Image Source="/Resources/REMOVE.png" HorizontalAlignment="Center"/>
                                     </Button>
-                                    <TextBlock Text="{Binding Name}" FontSize="16" FontFamily="Times New Roman" Grid.Column="1"/>
+                                    <TextBlock Text=" " FontSize="16" FontFamily="Times New Roman"/>
+                                    <TextBlock Text="{Binding Services.Name}" FontSize="16" FontFamily="Times New Roman"/>
                                 </StackPanel>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
@@ -68,7 +69,7 @@
 
                     <Button Name="ImageBtn" Grid.RowSpan="5" Background="Transparent" Click="ImageBtn_Click"/>
                     <Border Grid.RowSpan="5" BorderThickness="1" BorderBrush="Black">
-                        <Image Name="ImageBlock" Source="/Resources/imageselect.png" Height="70"/>
+                        <Image Name="ImageBlock" Source="/Resources/imageselect.png" Stretch="Uniform"/>
                     </Border>
 
                     <Grid Grid.Column="2" Grid.ColumnSpan="4">
@@ -78,7 +79,7 @@
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="Заказчик:" FontSize="20" FontFamily="Times New Roman" Background="Transparent" VerticalAlignment="Center"/>
                         <Border Grid.Column="1" Background="White" CornerRadius="20" Margin="0 5">
-                            <TextBox BorderThickness="0" Background="Transparent" Margin="15 0"/>
+                            <TextBox Name="ClientTB" BorderThickness="0" FontSize="16" VerticalAlignment="Center" FontFamily="Times New Roman" Background="Transparent" Margin="15 0" MouseDoubleClick="ClientTB_MouseDoubleClick"/>
                         </Border>
                     </Grid>
 
@@ -89,7 +90,7 @@
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="Дата:" FontSize="20" FontFamily="Times New Roman" Background="Transparent" VerticalAlignment="Center"/>
                         <Border Grid.Column="1" Background="White" CornerRadius="20" Margin="0 5">
-                            <DatePicker BorderThickness="0" Background="Transparent" Margin="5 3"/>
+                            <DatePicker Name="DateP" BorderThickness="0" VerticalAlignment="Center" Background="Transparent" Margin="5 3" IsEnabled="False"/>
                         </Border>
                     </Grid>
 

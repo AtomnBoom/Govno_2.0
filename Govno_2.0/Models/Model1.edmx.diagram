@@ -4,18 +4,18 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d1fdb18bce1c4845a5ad8b263468f718" Name="Diagram1">
+      <Diagram DiagramId="2678c195b9d94300b9bb8f277233e6d4" Name="Diagram1">
         <EntityTypeShape EntityType="FixitModel.Clients" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="FixitModel.Orders" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="FixitModel.OrdersServices" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="FixitModel.Services" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="FixitModel.SGroup" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="FixitModel.StatusOrders" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FixitModel.OrdersServices" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FixitModel.Services" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FixitModel.SGroup" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FixitModel.StatusOrders" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
         <EntityTypeShape EntityType="FixitModel.User" Width="1.5" PointX="8" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="FixitModel.UserType" Width="1.5" PointX="5.75" PointY="5.5" IsExpanded="true" />
         <AssociationConnector Association="FixitModel.FK_Orders_Clients" ManuallyRouted="false" />
         <AssociationConnector Association="FixitModel.FK_Orders_StatusOrders" ManuallyRouted="false" />
-        <AssociationConnector Association="FixitModel.FK_OrdersServices_Orders" ManuallyRouted="false" />
+        <AssociationConnector Association="FixitModel.FK_OrdersServices_Orders1" ManuallyRouted="false" />
         <AssociationConnector Association="FixitModel.FK_OrdersServices_Services" ManuallyRouted="false" />
         <AssociationConnector Association="FixitModel.FK_Services_SGroup" ManuallyRouted="false" />
         <AssociationConnector Association="FixitModel.FK_User_UserType" ManuallyRouted="false" />
