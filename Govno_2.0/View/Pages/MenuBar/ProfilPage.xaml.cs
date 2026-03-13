@@ -25,19 +25,40 @@ namespace Govno_2._0.View.Pages
         public ProfilPage()
         {
             InitializeComponent();
-            CurrentUser = App.currentUser;
+            LoadUserData();
+        }
 
-            if (CurrentUser != null)
+        private void LoadUserData()
+        {
+            try
             {
+                var userId = App.currentUser?.ID;
+
+                if (userId == null)
+                {
+                    MessageBox.Show("Пользователь не авторизован", "Ошибка");
+                    return;
+                }
+
                 using (var context = new FixitEntities())
                 {
                     CurrentUser = context.User
                         .Include("UserType")
-                        .FirstOrDefault(u => u.ID == CurrentUser.ID);
+                        .FirstOrDefault(u => u.ID == userId);
                 }
-            }
 
-            DataContext = this;
+                if (CurrentUser == null)
+                {
+                    MessageBox.Show("Данные пользователя не найдены", "Ошибка");
+                    return;
+                }
+
+                DataContext = this;
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show($"Ошибка загрузки профиля: {ex.Message}", "Ошибка");
+            }
         }
 
         private void Support_Click(object sender, MouseButtonEventArgs e)

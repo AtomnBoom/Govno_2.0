@@ -23,41 +23,48 @@ namespace Govno_2._0.View.Windows
         {
             InitializeComponent();
 
-            try
+            if (Properties.Settings.Default.LoginValue != string.Empty && Properties.Settings.Default.PasswordValue != string.Empty)
             {
-                if (Properties.Settings.Default.LoginValue != string.Empty && Properties.Settings.Default.PasswordValue != string.Empty)
-                {
-                    RemCb.IsChecked = true;
-                }
+                LoginTb.Text = Properties.Settings.Default.LoginValue;
+                PassPb.Password = Properties.Settings.Default.PasswordValue;
+                RemCb.IsChecked = true;
             }
-            catch { }
         }
 
         private void LogBtn_Click(object sender, RoutedEventArgs e)
         {
-            try
+            if (string.IsNullOrEmpty(LoginTb.Text) && string.IsNullOrEmpty(PassPb.Password))
             {
-                if (RemCb.IsChecked == true)
-                {
-                    Properties.Settings.Default.LoginValue = LoginTb.Text;
-                    Properties.Settings.Default.PasswordValue = PassPb.Password;
-                }
-                else
-                {
-                    Properties.Settings.Default.LoginValue = string.Empty;
-                    Properties.Settings.Default.PasswordValue = string.Empty;
-                }
-                Properties.Settings.Default.Save();
+                MessageBox.Show("Заполните все поля");
             }
-            catch { }
+            else
+            {
+                var user = App.context.User.FirstOrDefault(u => u.Login == LoginTb.Text || u.Mail == LoginTb.Text && u.Password == PassPb.Password);
+                if (user != null)
+                {
+                    if (RemCb.IsChecked == true)
+                    {
+                        Properties.Settings.Default.LoginValue = LoginTb.Text;
+                        Properties.Settings.Default.PasswordValue = PassPb.Password;
+                        Properties.Settings.Default.Save();
+                    }
+                    else
+                    {
+                        Properties.Settings.Default.LoginValue = string.Empty;
+                        Properties.Settings.Default.PasswordValue = string.Empty;
+                        Properties.Settings.Default.Save();
+                    }
 
-            Login login = new Login();
-            login.ShowDialog();
+                    App.currentUser = user;
+                    Login login = new Login();
+                    login.ShowDialog();
 
-            MainWindows main = new MainWindows();
-            main.Show();
+                    MainWindows main = new MainWindows();
+                    main.Show();
 
-            Close();
+                    Close();
+                }
+            }
         }
 
         private void RegBtn_Click(object sender, RoutedEventArgs e)
