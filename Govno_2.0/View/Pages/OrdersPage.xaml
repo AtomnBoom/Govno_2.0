@@ -132,7 +132,7 @@
                 Width="140" CornerRadius="30 0 0 0" Visibility="Collapsed" MouseLeave="VisibleAdd_MouseLeave">
 
             <Button Name="AddOrderBtn" Background="Transparent" Content="Добавить" 
-                    FontSize="18" FontFamily="Times New Roman"  BorderThickness="0" 
+                    FontSize="20" FontFamily="Times New Roman"  BorderThickness="0" 
                     Foreground="White" FontWeight="Bold" Click="AddOrderBtn_Click"/>
         </Border>
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Govno_2._0.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,32 @@ namespace Govno_2._0.View.Pages
     /// </summary>
     public partial class ProfilPage : Page
     {
+        public User CurrentUser { get; set; }
         public ProfilPage()
         {
             InitializeComponent();
+            CurrentUser = App.currentUser;
+
+            if (CurrentUser != null)
+            {
+                using (var context = new FixitEntities())
+                {
+                    CurrentUser = context.User
+                        .Include("UserType")
+                        .FirstOrDefault(u => u.ID == CurrentUser.ID);
+                }
+            }
+
+            DataContext = this;
+        }
+
+        private void Support_Click(object sender, MouseButtonEventArgs e)
+        {
+            App.MainFrame.Navigate(new SupportPage());
+        }
+        private void Settings_Click(object sender, MouseButtonEventArgs e)
+        {
+            App.MainFrame.Navigate(new SettingsPage());
         }
     }
 }

@@ -73,7 +73,7 @@ namespace Govno_2._0.View.Windows
 
         private void PriceBtn_Click(object sender, RoutedEventArgs e)
         {
-            MainF.Navigate(new OrdersPage());
+            MainF.Navigate(new PriceListPage());
         }
 
         private void ClientBtn_Click(object sender, RoutedEventArgs e)

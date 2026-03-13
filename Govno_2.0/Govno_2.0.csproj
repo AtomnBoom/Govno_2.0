@@ -123,6 +123,9 @@
     <Compile Include="View\Pages\MenuBar\SupportPage.xaml.cs">
       <DependentUpon>SupportPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Pages\PriceListPage.xaml.cs">
+      <DependentUpon>PriceListPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Windows\Edit\AddClientWindow.xaml.cs">
       <DependentUpon>AddClientWindow.xaml</DependentUpon>
     </Compile>
@@ -137,6 +140,9 @@
     </Compile>
     <Compile Include="View\Windows\Edit\EditOrder.xaml.cs">
       <DependentUpon>EditOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\Edit\EditPriceList.xaml.cs">
+      <DependentUpon>EditPriceList.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Windows\Edit\SelectClientWindow.xaml.cs">
       <DependentUpon>SelectClientWindow.xaml</DependentUpon>
@@ -221,6 +227,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Pages\PriceListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Windows\Edit\AddClientWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -238,6 +248,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Windows\Edit\EditOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\Edit\EditPriceList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
