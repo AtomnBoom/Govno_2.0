@@ -39,7 +39,7 @@ namespace Govno_2._0.View.Windows
             }
             else
             {
-                var user = App.context.User.FirstOrDefault(u => u.Login == LoginTb.Text || u.Mail == LoginTb.Text && u.Password == PassPb.Password);
+                var user = App.context.User.FirstOrDefault(u => (u.Login == LoginTb.Text && u.Password == PassPb.Password) || (u.Mail == LoginTb.Text && u.Password == PassPb.Password));
                 if (user != null)
                 {
                     if (RemCb.IsChecked == true)
@@ -64,12 +64,16 @@ namespace Govno_2._0.View.Windows
 
                     Close();
                 }
+                else
+                {
+                    MessageBox.Show("Введены некоректные данные!");
+                }
             }
         }
 
         private void RegBtn_Click(object sender, RoutedEventArgs e)
         {
-            RegistrationWindows regw = new RegistrationWindows();
+            Registration2Window regw = new Registration2Window();
             regw.Show();
             Close();
         }
@@ -78,16 +82,10 @@ namespace Govno_2._0.View.Windows
             RessPassWindow ress = new RessPassWindow();
             ress.ShowDialog();
         }
-        private void PassPb_PasswordChanged(object sender, RoutedEventArgs e)
-        {
-            PassTb.Text = PassPb.Password;
-        }
-        private void PassTb_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            PassPb.Password = PassTb.Text;
-        }
         private void PassVisibleBtn_Click(object sender, RoutedEventArgs e)
         {
+            PassPb.Password = PassTb.Text;
+            
             PassP.Visibility = Visibility.Visible;
             PassT.Visibility = Visibility.Collapsed;
             PassVisibleBtn.Visibility = Visibility.Visible;
@@ -95,6 +93,7 @@ namespace Govno_2._0.View.Windows
         }
         private void PassInvisibleBtn_Click(object sender, RoutedEventArgs e)
         {
+            PassTb.Text = PassPb.Password;
             PassP.Visibility = Visibility.Collapsed;
             PassT.Visibility = Visibility.Visible;
             PassVisibleBtn.Visibility = Visibility.Collapsed;

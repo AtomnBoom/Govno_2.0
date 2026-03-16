@@ -41,37 +41,37 @@
 
                 <TextBlock Grid.Row="3" Text="Код сотрудника" FontSize="28" FontFamily="Times New Roman" Margin="20 0" VerticalAlignment="Center"/>
                 <Border Grid.Row="4" CornerRadius="20" Background="#E3E3E3" Margin="0 5">
-                    <TextBox Name="LoginTb" Background="Transparent" FontSize="24" FontFamily="Times New Roman" VerticalContentAlignment="Center" BorderThickness="0" Margin="20 0"/>
+                    <TextBlock Name="LoginTb" VerticalAlignment="Center" Height="50" Background="Transparent" FontSize="24" FontFamily="Times New Roman" Margin="20 0"/>
                 </Border>
 
                 <TextBlock Grid.Row="5" Text="Пароль" FontSize="28" FontFamily="Times New Roman" Margin="20 0" VerticalAlignment="Center"/>
                 <Border Name="PassP" Grid.Row="6" CornerRadius="20" Background="#E3E3E3" Margin="0 5">
-                    <PasswordBox Name="PassPb" Background="Transparent" FontSize="24" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0" PasswordChanged="PassPb_PasswordChanged" VerticalContentAlignment="Center"/>
+                    <PasswordBox Name="PassPb" Background="Transparent" FontSize="24" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0" VerticalContentAlignment="Center"/>
                 </Border>
                 <Border Name="PassT" Visibility="Collapsed" Grid.Row="6" CornerRadius="20" Background="#E3E3E3" Margin="0 5">
-                    <TextBox Name="PassTb" Background="Transparent" FontSize="24" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0" TextChanged="PassTb_TextChanged"  VerticalContentAlignment="Center"/>
+                    <TextBox Name="PassTb" Background="Transparent" FontSize="24" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0"  VerticalContentAlignment="Center"/>
                 </Border>
 
                 <TextBlock Grid.Row="7" Text="Повторите пароль" FontSize="28" FontFamily="Times New Roman" Margin="20 0" VerticalAlignment="Center"/>
                 <Border Name="PassP2" Grid.Row="8" CornerRadius="20" Background="#E3E3E3" Margin="0 5">
-                    <PasswordBox Name="PassPb2" Background="Transparent" FontSize="24" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0" PasswordChanged="Pass2Pb_PasswordChanged" VerticalContentAlignment="Center"/>
+                    <PasswordBox Name="PassPb2" Background="Transparent" FontSize="24" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0" VerticalContentAlignment="Center"/>
                 </Border>
                 <Border Name="PassT2" Visibility="Collapsed" Grid.Row="8" CornerRadius="20" Background="#E3E3E3" Margin="0 5">
-                    <TextBox Name="PassTb2" Background="Transparent" FontSize="24" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0" TextChanged="Pass2Tb_TextChanged"  VerticalContentAlignment="Center"/>
+                    <TextBox Name="PassTb2" Background="Transparent" FontSize="24" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0"  VerticalContentAlignment="Center"/>
                 </Border>
 
                 <Button Name="PassInvisibleBtn" Click="PassVisibleBtn_Click"  Grid.Row="6" Background="Transparent" BorderThickness="0" HorizontalAlignment="Right" Height="40" Width="50" Margin="10 0" Visibility="Collapsed">
-                    <Image Source="C:\Users\vboxuser\source\repos\Govno_2.0\Govno_2.0\Resources\hide.png"/>
+                    <Image Source="\Resources\hide.png"/>
                 </Button>
                 <Button Name="PassVisibleBtn" Click="PassInvisibleBtn_Click"  Grid.Row="6" Background="Transparent" BorderThickness="0" HorizontalAlignment="Right" Height="40" Width="50" Margin="10 0">
-                    <Image Source="C:\Users\vboxuser\source\repos\Govno_2.0\Govno_2.0\Resources\view.png"/>
+                    <Image Source="\Resources\view.png"/>
                 </Button>
 
                 <Button Name="PassInvisible2Btn" Click="PassVisible2Btn_Click"  Grid.Row="8" Background="Transparent" BorderThickness="0" HorizontalAlignment="Right" Height="40" Width="50" Margin="10 0" Visibility="Collapsed">
-                    <Image Source="C:\Users\vboxuser\source\repos\Govno_2.0\Govno_2.0\Resources\hide.png"/>
+                    <Image Source="\Resources\hide.png"/>
                 </Button>
                 <Button Name="PassVisible2Btn" Click="PassInvisible2Btn_Click"  Grid.Row="8" Background="Transparent" BorderThickness="0" HorizontalAlignment="Right" Height="40" Width="50" Margin="10 0">
-                    <Image Source="C:\Users\vboxuser\source\repos\Govno_2.0\Govno_2.0\Resources\view.png"/>
+                    <Image Source="\Resources\view.png"/>
                 </Button>
 
                 <Border Grid.Row="10" CornerRadius="20" Background="#F70129" Margin="0 5">

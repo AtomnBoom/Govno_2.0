@@ -51,17 +51,17 @@
 
                 <TextBlock Grid.Row="5" Text="Пароль" FontSize="28" FontFamily="Times New Roman" Margin="20 0" VerticalAlignment="Center"/>
                 <Border Name="PassP" Grid.Row="6" CornerRadius="20" Background="#E3E3E3" Margin="0 5">
-                    <PasswordBox Name="PassPb" Background="Transparent" FontSize="24" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0" PasswordChanged="PassPb_PasswordChanged" VerticalContentAlignment="Center"/>
+                    <PasswordBox Name="PassPb" Background="Transparent" FontSize="24" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0" VerticalContentAlignment="Center"/>
                 </Border>
                 <Border Name="PassT" Visibility="Collapsed" Grid.Row="6" CornerRadius="20" Background="#E3E3E3" Margin="0 5">
-                    <TextBox Name="PassTb" Background="Transparent" FontSize="24" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0" TextChanged="PassTb_TextChanged"  VerticalContentAlignment="Center"/>
+                    <TextBox Name="PassTb" Background="Transparent" FontSize="24" FontFamily="Times New Roman"  BorderThickness="0" Margin="20 0" VerticalContentAlignment="Center"/>
                 </Border>
 
                 <Button Name="PassInvisibleBtn" Click="PassVisibleBtn_Click"  Grid.Row="6" Background="Transparent" BorderThickness="0" HorizontalAlignment="Right" Height="40" Width="50" Margin="10 0" Visibility="Collapsed">
-                    <Image Source="C:\Users\vboxuser\source\repos\Govno_2.0\Govno_2.0\Resources\hide.png"/>
+                    <Image Source="\Resources\hide.png"/>
                 </Button>
                 <Button Name="PassVisibleBtn" Click="PassInvisibleBtn_Click"  Grid.Row="6" Background="Transparent" BorderThickness="0" HorizontalAlignment="Right" Height="40" Width="50" Margin="10 0">
-                    <Image Source="C:\Users\vboxuser\source\repos\Govno_2.0\Govno_2.0\Resources\view.png"/>
+                    <Image Source="\Resources\view.png"/>
                 </Button>
 
                 <CheckBox Name="RemCb" Grid.Row="8" FontSize="24" Content="Запомнить меня" FontFamily="Times New Roman" VerticalContentAlignment="Center" Margin="20 0"/>

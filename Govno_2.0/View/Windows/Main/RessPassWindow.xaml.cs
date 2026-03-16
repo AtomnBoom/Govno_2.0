@@ -26,17 +26,29 @@ namespace Govno_2._0.View.Windows
 
         private void RessBtn_Click(object sender, RoutedEventArgs e)
         {
-            WaitAdmin waitAdmin = new WaitAdmin();
-            waitAdmin.ShowDialog();
-            if (DialogResult == true)
+            var user = App.context.User.FirstOrDefault(u => (u.Login == LoginTb.Text && u.Password == PassPb.Password) || (u.Mail == LoginTb.Text && u.Password == PassPb.Password));
+            if (user != null)
             {
+                if (PassPb.Password == PassPb2.Password)
+                {
+                    user.Password = PassPb.Password;
+                    App.context.SaveChanges();
 
+                    WaitAdmin waitAdmin = new WaitAdmin();
+
+                    if (waitAdmin.ShowDialog() == true)
+                    {
+                        LoginWindow loginWindow = new LoginWindow();
+                        loginWindow.Show();
+                        Close();
+                    }
+                }
             }
-            Close();
         }
 
         private void PassVisibleBtn_Click(object sender, RoutedEventArgs e)
         {
+            PassPb.Password = PassTb.Text;
             PassP.Visibility = Visibility.Visible;
             PassT.Visibility = Visibility.Collapsed;
             PassVisibleBtn.Visibility = Visibility.Visible;
@@ -44,6 +56,7 @@ namespace Govno_2._0.View.Windows
         }
         private void PassInvisibleBtn_Click(object sender, RoutedEventArgs e)
         {
+            PassTb.Text = PassPb.Password;
             PassP.Visibility = Visibility.Collapsed;
             PassT.Visibility = Visibility.Visible;
             PassVisibleBtn.Visibility = Visibility.Collapsed;
@@ -51,6 +64,7 @@ namespace Govno_2._0.View.Windows
         }
         private void PassVisible2Btn_Click(object sender, RoutedEventArgs e)
         {
+            PassPb2.Password = PassTb2.Text;
             PassP2.Visibility = Visibility.Visible;
             PassT2.Visibility = Visibility.Collapsed;
             PassVisible2Btn.Visibility = Visibility.Visible;
@@ -58,26 +72,11 @@ namespace Govno_2._0.View.Windows
         }
         private void PassInvisible2Btn_Click(object sender, RoutedEventArgs e)
         {
+            PassTb2.Text = PassPb2.Password;
             PassP2.Visibility = Visibility.Collapsed;
             PassT2.Visibility = Visibility.Visible;
             PassVisible2Btn.Visibility = Visibility.Collapsed;
             PassInvisible2Btn.Visibility = Visibility.Visible;
-        }
-        private void PassPb_PasswordChanged(object sender, RoutedEventArgs e)
-        {
-            PassTb.Text = PassPb.Password;
-        }
-        private void PassTb_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            PassPb.Password = PassTb.Text;
-        }
-        private void Pass2Pb_PasswordChanged(object sender, RoutedEventArgs e)
-        {
-            PassTb2.Text = PassPb2.Password;
-        }
-        private void Pass2Tb_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            PassPb2.Password = PassTb2.Text;
         }
     }
 }
