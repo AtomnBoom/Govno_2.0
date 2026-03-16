@@ -26,7 +26,7 @@ namespace Govno_2._0.View.Windows
 
         private void RessBtn_Click(object sender, RoutedEventArgs e)
         {
-            var user = App.context.User.FirstOrDefault(u => (u.Login == LoginTb.Text && u.Password == PassPb.Password) || (u.Mail == LoginTb.Text && u.Password == PassPb.Password));
+            var user = App.context.User.FirstOrDefault(u => (u.Login == LoginTb.Text));
             if (user != null)
             {
                 if (PassPb.Password == PassPb2.Password)
@@ -77,6 +77,13 @@ namespace Govno_2._0.View.Windows
             PassT2.Visibility = Visibility.Visible;
             PassVisible2Btn.Visibility = Visibility.Collapsed;
             PassInvisible2Btn.Visibility = Visibility.Visible;
+        }
+
+        private void CancelBtn_Click(object sender, RoutedEventArgs e)
+        {
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.Show();
+            Close();
         }
     }
 }

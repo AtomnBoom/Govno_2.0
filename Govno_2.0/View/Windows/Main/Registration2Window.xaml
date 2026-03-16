@@ -5,14 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Govno_2._0.View.Windows"
         mc:Ignorable="d"
-        Title="Registration2Window" Height="900" Width="1200" WindowStartupLocation="CenterScreen">
+        Title="Регистрация" Height="900" Width="1200" WindowStartupLocation="CenterScreen">
     <Grid Background="#ECECEC">
         <Grid.RowDefinitions>
             <RowDefinition Height="70" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
         <Grid Background="White">
-            <Image Height="60" Width="120" HorizontalAlignment="Left" Source="/Resources/Logo.png" Margin="15 0"/>
+            <Button Name="CancelBtn" Background="Transparent" Height="60" Width="120" HorizontalAlignment="Left" Margin="15 0" BorderThickness="0" Click="CancelBtn_Click">
+                <Image Source="\Resources\Logo.png"/>
+            </Button>
         </Grid>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>

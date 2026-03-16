@@ -26,7 +26,7 @@ namespace Govno_2._0.View.Windows
             InitializeComponent();
 
             _newUser = _currentUser;
-            LoginTb.Text = _newUser.Login;
+            LoginTb.Content = _newUser.Login;
         }
 
         private void RegBtn_Click(object sender, RoutedEventArgs e)
@@ -35,14 +35,21 @@ namespace Govno_2._0.View.Windows
             {
                 if (PassPb.Password == PassPb2.Password)
                 {
-                    _newUser.Password = PassPb.Password;
-
-                    App.context.SaveChanges();
-
                     WaitAdmin waitAdmin = new WaitAdmin();
 
                     if (waitAdmin.ShowDialog() == true)
                     {
+                        _newUser.Password = PassPb.Password;
+
+                        App.context.SaveChanges();
+                        LoginWindow loginWindow = new LoginWindow();
+                        loginWindow.Show();
+                        Close();
+                    }
+                    else
+                    {
+                        App.context.User.Remove(_newUser);
+                        App.context.SaveChanges();
                         LoginWindow loginWindow = new LoginWindow();
                         loginWindow.Show();
                         Close();
@@ -82,6 +89,14 @@ namespace Govno_2._0.View.Windows
             PassT2.Visibility = Visibility.Visible;
             PassVisible2Btn.Visibility = Visibility.Collapsed;
             PassInvisible2Btn.Visibility = Visibility.Visible;
+        }
+        private void CancelBtn_Click(object sender, RoutedEventArgs e)
+        {
+            App.context.User.Remove(_newUser);
+            App.context.SaveChanges();
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.Show();
+            Close();
         }
     }
 }

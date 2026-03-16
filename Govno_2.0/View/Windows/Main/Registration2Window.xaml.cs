@@ -34,8 +34,11 @@ namespace Govno_2._0.View.Windows
             if (!string.IsNullOrEmpty(SnameTb.Text) && !string.IsNullOrEmpty(NameTb.Text) && !string.IsNullOrEmpty(LnameTb.Text))
             {
                 var selectedRole = RoleCmb.SelectedItem as UserType;
-                string generatedLogin = GenerateLogin(selectedRole, LnameTb.Text, NameTb.Text);
-                while (App.context.User.Any(u => u.Login == generatedLogin));
+                string generatedLogin = GenerateLogin(selectedRole);
+                if( (App.context.User.Any(u => u.Login == generatedLogin)))
+                {
+
+                }
 
                 User newUser = new User()
                 {
@@ -68,10 +71,8 @@ namespace Govno_2._0.View.Windows
             }
         }
 
-        private string GenerateLogin(UserType role, string lastName, string name)
+        private string GenerateLogin(UserType role)
         {
-            string initials = (lastName.Substring(0, 1) + name.Substring(0, 1)).ToLower();
-
             string prefix;
             string roleName = role.Name.ToLower();
 
@@ -93,7 +94,13 @@ namespace Govno_2._0.View.Windows
 
             int count = App.context.User.Where(u => u.Login.StartsWith(prefix)).Count() + 1;
 
-            return string.Format("{0}_{1}_{2:D3}", prefix, initials, count);
+            return string.Format("{0}{1:D5}", prefix, count);
+        }
+        private void CancelBtn_Click(object sender, RoutedEventArgs e)
+        {
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.Show();
+            Close();
         }
     }
 }

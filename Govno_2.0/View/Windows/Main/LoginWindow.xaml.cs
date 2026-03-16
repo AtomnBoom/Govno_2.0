@@ -80,7 +80,8 @@ namespace Govno_2._0.View.Windows
         private void ResPassBtn_Click(object sender, RoutedEventArgs e)
         {
             RessPassWindow ress = new RessPassWindow();
-            ress.ShowDialog();
+            ress.Show();
+            Close();
         }
         private void PassVisibleBtn_Click(object sender, RoutedEventArgs e)
         {
