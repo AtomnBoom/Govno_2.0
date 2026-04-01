@@ -129,7 +129,7 @@
                 Width="140" Margin="0 25 0 0" CornerRadius="30 0 0 0" MouseEnter="HideAdd_MouseEnter"/>
 
         <Border Name="VisibleAdd" Grid.Row="1" HorizontalAlignment="Right" Background="#F70129" 
-                Width="140" CornerRadius="30 0 0 0" Visibility="Collapsed" MouseLeave="VisibleAdd_MouseLeave">
+                Width="140" CornerRadius="30 0 0 0" Visibility="Visible" MouseLeave="VisibleAdd_MouseLeave">
 
             <Button Name="AddOrderBtn" Background="Transparent" Content="Добавить" 
                     FontSize="20" FontFamily="Times New Roman"  BorderThickness="0" 
