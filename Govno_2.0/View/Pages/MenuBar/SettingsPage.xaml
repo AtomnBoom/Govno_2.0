@@ -5,10 +5,116 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Govno_2._0.View.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+       d:DesignHeight="830" d:DesignWidth="1180"
       Title="SettingsPage">
 
-    <Grid>
-        
+    <Grid Background="#E8E8E8">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="280"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Border Background="White" Grid.Column="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" Margin="0,50,0,0">
+                    <Button Name="MenuSupport"
+                            Content="Техническая&#x0a;поддержка" 
+                            FontSize="36" 
+                            FontFamily="Times New Roman"
+                            Margin="20,10"
+                            Cursor="Hand"
+                            Style="{StaticResource NemuBtn}" 
+                            MouseLeftButtonUp="Support_Click"/>
+
+                    <Rectangle Height="2" Fill="#CCCCCC" Margin="15,5"/>
+
+                    <Button Name="MenuProfile" 
+                            Content="Личный&#x0a;кабинет" 
+                            FontSize="36" 
+                            FontFamily="Times New Roman"
+                            Margin="20,15"
+                            Cursor="Hand"
+                            Style="{StaticResource NemuBtn}" 
+                            MouseLeftButtonUp="Profile_Click"/>
+
+                    <TextBlock Name="MenuSettings" 
+                               Text="Настройки" 
+                               FontSize="36" 
+                               FontFamily="Times New Roman"
+                               FontWeight="Bold"
+                               Foreground="#F70129"
+                               Margin="20,15"
+                               Cursor="Hand"
+                               HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <StackPanel Grid.Column="1" Margin="50,50,0,0" Width="650" HorizontalAlignment="Left">
+
+            <TextBlock Text="Основные данные" FontSize="34" FontFamily="Times New Roman" FontWeight="Bold" Margin="0,0,0,30"/>
+
+            <Grid Margin="0,0,0,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="215"/>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="Код сотрудника" FontSize="32" FontFamily="Times New Roman" VerticalAlignment="Center"/>
+                <TextBlock Name="LoginTbl" Grid.Column="2" Text="{Binding CurrentUser.Login}" FontSize="32" FontFamily="Times New Roman" Foreground="#333"/>
+            </Grid>
+
+            <Grid Margin="0,0,0,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="215"/>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="Пароль" FontSize="32" FontFamily="Times New Roman" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="2" Text="***********" FontSize="32" FontFamily="Times New Roman" Foreground="#333"/>
+                <Button Name="PassChangeBtn" Grid.Column="4" Height="37" Click="PassChangeBtn_Click" Background="Transparent" BorderThickness="0">
+                    <Image Source="/Resources/change.png"/>
+                </Button>
+            </Grid>
+
+            <Grid Margin="0,0,0,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="215"/>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="Телефон" FontSize="32" FontFamily="Times New Roman" VerticalAlignment="Center"/>
+                <TextBlock Name="PhoneTbl" Grid.Column="2" Text="{Binding CurrentUser.Phone}" 
+                         FontSize="32" FontFamily="Times New Roman" Padding="5,3"/>
+                <Button Name="PhoneChangeBtn" Grid.Column="4" Height="37" Click="PhoneChangeBtn_Click" Background="Transparent" BorderThickness="0">
+                    <Image Source="/Resources/change.png"/>
+                </Button>
+            </Grid>
+
+            <Grid Margin="0,0,0,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="215"/>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="Эл.Почта" FontSize="32" FontFamily="Times New Roman" VerticalAlignment="Center"/>
+                <TextBlock Name="MailTbl" Grid.Column="2" Text="{Binding CurrentUser.Mail}" 
+                         FontSize="32" FontFamily="Times New Roman" Padding="5,3"/>
+                <Button Name="MailChangeBtn" Grid.Column="4" Height="37" Click="MailChangeBtn_Click" Background="Transparent" BorderThickness="0">
+                    <Image Source="/Resources/change.png"/>
+                </Button>
+            </Grid>
+        </StackPanel>
     </Grid>
 </Page>

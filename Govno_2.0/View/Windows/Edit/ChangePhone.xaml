@@ -21,6 +21,9 @@
                     <RowDefinition Height="1*" />
                 </Grid.RowDefinitions>
 
+                <Button Name="CancelBtn" HorizontalAlignment="Left" Background="Transparent" BorderThickness="0" Click="CancelBtn_Click">
+                    <Image Source="/Resources/Cancel.png"/>
+                </Button>
                 <Label Content="СМЕНА ТЕЛЕФОНА"  FontSize="24" FontFamily="Times New Roman" HorizontalAlignment="Center" />
 
                 <TextBlock Grid.Row="2" Text="Старый телефон" FontSize="24" FontFamily="Times New Roman" VerticalAlignment="Bottom"/>

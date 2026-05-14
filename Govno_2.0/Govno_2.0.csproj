@@ -134,11 +134,11 @@
     <Compile Include="View\Windows\Edit\AddClientWindow.xaml.cs">
       <DependentUpon>AddClientWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Windows\Edit\ChangeMail.xaml.cs">
-      <DependentUpon>ChangeMail.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\Windows\Edit\ChangePassword.xaml.cs">
       <DependentUpon>ChangePassword.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\Edit\ChangeMail.xaml.cs">
+      <DependentUpon>ChangeMail.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Windows\Edit\ChangePhone.xaml.cs">
       <DependentUpon>ChangePhone.xaml</DependentUpon>
@@ -152,6 +152,9 @@
     <Compile Include="View\Windows\Edit\SelectClientWindow.xaml.cs">
       <DependentUpon>SelectClientWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Windows\Edit\ServiceEditDialog.xaml.cs">
+      <DependentUpon>ServiceEditDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Windows\Edit\ServiceSelect.xaml.cs">
       <DependentUpon>ServiceSelect.xaml</DependentUpon>
     </Compile>
@@ -164,11 +167,11 @@
     <Compile Include="View\Windows\Main\MainWindows.xaml.cs">
       <DependentUpon>MainWindows.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Windows\Main\Registration2Window.xaml.cs">
-      <DependentUpon>Registration2Window.xaml</DependentUpon>
+    <Compile Include="View\Windows\Main\RegistrationWindow.xaml.cs">
+      <DependentUpon>RegistrationWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Windows\Main\RegistrationWindows.xaml.cs">
-      <DependentUpon>RegistrationWindows.xaml</DependentUpon>
+    <Compile Include="View\Windows\Main\Registration2Windows.xaml.cs">
+      <DependentUpon>Registration2Windows.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Windows\Main\RessPassWindow.xaml.cs">
       <DependentUpon>RessPassWindow.xaml</DependentUpon>
@@ -235,11 +238,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Windows\Edit\ChangeMail.xaml">
+    <Page Include="View\Windows\Edit\ChangePassword.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Windows\Edit\ChangePassword.xaml">
+    <Page Include="View\Windows\Edit\ChangeMail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -259,6 +262,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Windows\Edit\ServiceEditDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Windows\Edit\ServiceSelect.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -275,11 +282,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Windows\Main\Registration2Window.xaml">
+    <Page Include="View\Windows\Main\RegistrationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Windows\Main\RegistrationWindows.xaml">
+    <Page Include="View\Windows\Main\Registration2Windows.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -346,6 +353,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\change.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

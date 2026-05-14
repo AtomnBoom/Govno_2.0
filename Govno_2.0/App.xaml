@@ -121,5 +121,24 @@
             <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
         </Style>
 
+        <Style x:Key="SupportProblemBtn" TargetType="Button" BasedOn="{StaticResource NemuBtn}">
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="FontFamily" Value="Times New Roman"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="Margin" Value="0,6"/>
+            <Setter Property="Padding" Value="12,8"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="#DDDDDD"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Foreground" Value="#2C3E50"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#F0F0F0"/>
+                    <Setter Property="BorderBrush" Value="#F70129"/>
+                    <Setter Property="Foreground" Value="#F70129"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
     </Application.Resources>
 </Application>

@@ -5,8 +5,170 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Govno_2._0.View.Windows.Edit"
         mc:Ignorable="d"
-        Title="EditPriceList" Height="450" Width="800">
+        Title="Редактирование прайс-листа"
+        Height="700" Width="1000"
+        WindowStartupLocation="CenterOwner"
+        Background="#E8E8E8">
+
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="260"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Левая панель меню (как на главных страницах) -->
+        <Border Background="White" Grid.Column="0">
+            <StackPanel Margin="0,30,0,0">
+                <TextBlock Text="Редактор&#x0a;прайс-листа" 
+                           FontSize="32" 
+                           FontFamily="Times New Roman"
+                           FontWeight="Bold"
+                           Foreground="#F70129"
+                           Margin="20,10"
+                           HorizontalAlignment="Center"/>
+
+                <Rectangle Height="2" Fill="#CCCCCC" Margin="15,10"/>
+
+                <Button Name="BackToMainBtn" 
+                        Content="← Вернуться" 
+                        FontSize="28" 
+                        FontFamily="Times New Roman"
+                        Margin="20,15"
+                        Cursor="Hand"
+                        Style="{StaticResource NemuBtn}"
+                        Click="BackToMainBtn_Click"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Правая область: редактор групп и услуг -->
+        <Grid Grid.Column="1" Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Заголовок -->
+            <TextBlock Text="Управление категориями и услугами" 
+                       FontSize="28" 
+                       FontFamily="Times New Roman" 
+                       FontWeight="Bold"
+                       Margin="0,0,0,15"/>
+
+            <!-- Две колонки: группы и услуги -->
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="1.5*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Блок групп -->
+                <Border Background="White" 
+                        BorderBrush="#CCCCCC" 
+                        BorderThickness="1" 
+                        CornerRadius="8"
+                        Padding="10">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Text="Категории услуг" 
+                                   FontSize="24" 
+                                   FontFamily="Times New Roman" 
+                                   FontWeight="Bold"
+                                   Margin="0,0,0,10"/>
+
+                        <ListBox x:Name="GroupsListBox" 
+                                 Grid.Row="1"
+                                 DisplayMemberPath="Name"
+                                 SelectedValuePath="Id"
+                                 SelectionChanged="GroupsListBox_SelectionChanged"
+                                 Background="Transparent"
+                                 BorderThickness="0"
+                                 FontSize="20"
+                                 FontFamily="Times New Roman"
+                                 Margin="0,0,0,10"/>
+
+                        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                            <Button Content="➕ Добавить" 
+                                    Style="{StaticResource NemuBtn}"
+                                    FontSize="18"
+                                    Padding="10,5"
+                                    Margin="0,0,10,0"
+                                    Click="AddGroup_Click"/>
+                            <Button Content="✏ Редактировать" 
+                                    Style="{StaticResource NemuBtn}"
+                                    FontSize="18"
+                                    Padding="10,5"
+                                    Margin="0,0,10,0"
+                                    Click="EditGroup_Click"/>
+                            <Button Content="🗑 Удалить" 
+                                    Style="{StaticResource NemuBtn}"
+                                    FontSize="18"
+                                    Padding="10,5"
+                                    Click="DeleteGroup_Click"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+                <!-- Разделитель -->
+                <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch"/>
+
+                <!-- Блок услуг -->
+                <Border Grid.Column="2" 
+                        Background="White" 
+                        BorderBrush="#CCCCCC" 
+                        BorderThickness="1" 
+                        CornerRadius="8"
+                        Padding="10">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Text="Услуги выбранной категории" 
+                                   FontSize="24" 
+                                   FontFamily="Times New Roman" 
+                                   FontWeight="Bold"
+                                   Margin="0,0,0,10"/>
+
+                        <ListBox x:Name="ServicesListBox" 
+                                 Grid.Row="1"
+                                 DisplayMemberPath="Name"
+                                 SelectedValuePath="Id"
+                                 Background="Transparent"
+                                 BorderThickness="0"
+                                 FontSize="20"
+                                 FontFamily="Times New Roman"
+                                 Margin="0,0,0,10"/>
+
+                        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                            <Button Content="➕ Добавить услугу" 
+                                    Style="{StaticResource NemuBtn}"
+                                    FontSize="18"
+                                    Padding="10,5"
+                                    Margin="0,0,10,0"
+                                    Click="AddService_Click"/>
+                            <Button Content="✏ Редактировать" 
+                                    Style="{StaticResource NemuBtn}"
+                                    FontSize="18"
+                                    Padding="10,5"
+                                    Margin="0,0,10,0"
+                                    Click="EditService_Click"/>
+                            <Button Content="🗑 Удалить" 
+                                    Style="{StaticResource NemuBtn}"
+                                    FontSize="18"
+                                    Padding="10,5"
+                                    Click="DeleteService_Click"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>

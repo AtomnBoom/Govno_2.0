@@ -5,10 +5,130 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Govno_2._0.View.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="830" d:DesignWidth="1180"
       Title="SupportPage">
 
-    <Grid>
-        
+    <Grid Background="#E8E8E8">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="280"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Background="White" Grid.Column="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" Margin="0,50,0,0">
+                    <TextBlock Name="MenuSupport" 
+                               Text="Техническая&#x0a;поддержка" 
+                               FontSize="36" 
+                               FontFamily="Times New Roman"
+                               FontWeight="Bold"
+                               Foreground="#F70129"
+                               Margin="20,10"
+                               Cursor="Hand"
+                               HorizontalAlignment="Center"/>
+
+                    <Rectangle Height="2" Fill="#CCCCCC" Margin="15,5"/>
+
+                    <Button Name="MenuProfile" 
+                            Content="Личный&#x0a;кабинет" 
+                            FontSize="36" 
+                            FontFamily="Times New Roman"
+                            Margin="20,15"
+                            Cursor="Hand"
+                            Style="{StaticResource NemuBtn}" 
+                            MouseLeftButtonUp="Profile_Click"/>
+
+                    <Button Name="MenuSettings" 
+                            Content="Настройки" 
+                            FontSize="36" 
+                            FontFamily="Times New Roman"
+                            Margin="20,15"
+                            Cursor="Hand"
+                            Style="{StaticResource NemuBtn}" 
+                            MouseLeftButtonUp="Settings_Click"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <StackPanel Grid.Column="1" Margin="40,50,40,30">
+
+            <TextBlock Text="📋 Техническая поддержка" 
+               FontSize="32" 
+               FontFamily="Times New Roman" 
+               FontWeight="Bold"
+               Foreground="#2C3E50"
+               Margin="0,0,0,15"/>
+
+            <TextBlock Text="Выберите тип проблемы из списка:" 
+               FontSize="24" 
+               FontFamily="Times New Roman" 
+               Foreground="#34495E"
+               Margin="0,0,0,15"/>
+
+            <Border Background="#F9F9F9" 
+            BorderBrush="#CCCCCC" 
+            BorderThickness="1" 
+            CornerRadius="8"
+            Padding="5"
+            Margin="0,0,0,25">
+                <ListBox Name="ProblemsListBox" 
+                 FontSize="26" 
+                 FontFamily="Times New Roman"
+                 BorderThickness="0"
+                 Background="#F9F9F9">
+                    <ListBoxItem Content="⚠ Ошибка запуска ПК"/>
+                    <ListBoxItem Content="🖥 Ошибка Windows"/>
+                    <ListBoxItem Content="🔌 Ошибка блока питания"/>
+                    <ListBoxItem Content="🧠 Брак процессора"/>
+                    <ListBoxItem Content="💾 Проблема запуска ПК, ошибка плашки оперативной памяти"/>
+                </ListBox>
+            </Border>
+
+            <TextBlock Text="💬 Комментарий (необязательно)" 
+               FontSize="22" 
+               FontFamily="Times New Roman" 
+               FontWeight="SemiBold"
+               Foreground="#2C3E50"
+               Margin="0,0,0,8"/>
+
+            <TextBox Name="CommentBox" 
+             FontSize="20" 
+             FontFamily="Times New Roman" 
+             Height="110" 
+             TextWrapping="Wrap"
+             AcceptsReturn="True"
+             VerticalScrollBarVisibility="Auto"
+             Padding="10,8"
+             BorderBrush="#AAAAAA"
+             BorderThickness="1"
+             Background="White"
+             Foreground="#333333"
+             CaretBrush="#F70129"/>
+
+            <Button Content="📨 Отправить заявку администратору" 
+            FontSize="26" 
+            FontFamily="Times New Roman"
+            HorizontalAlignment="Center"
+            Width="440"
+            Height="40"
+            Margin="0,30,0,10"
+            Padding="15,10"
+            Cursor="Hand"
+            Style="{StaticResource NemuBtn}"
+            Click="SendRequest_Click"/>
+
+            <TextBlock Text="После отправки заявки ожидайте пока к вам подойдет эксперт" 
+               FontSize="16" 
+               FontFamily="Times New Roman" 
+               Foreground="#7F8C8D"
+               HorizontalAlignment="Center"
+               FontStyle="Italic"/>
+        </StackPanel>
     </Grid>
 </Page>

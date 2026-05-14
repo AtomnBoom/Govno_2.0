@@ -53,9 +53,9 @@ namespace Govno_2._0.View.Pages
 
         private void EditServiceBtn_Click(object sender, RoutedEventArgs e)
         {
-            EditPriceList editWindow = new EditPriceList();
+            EditPriceList editPriceList = new EditPriceList();
 
-            if (editWindow.ShowDialog() == true)
+            if (editPriceList.ShowDialog() == true)
             {
                 LoadPriceList();
             }

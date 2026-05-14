@@ -1,0 +1,34 @@
+﻿<Window x:Class="Govno_2._0.View.Windows.Edit.ServiceEditDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Govno_2._0.View.Windows.Edit"
+        mc:Ignorable="d"
+         Title="Редактирование услуги"
+        Width="400" Height="220" WindowStyle="None"
+        Background="Transparent" AllowsTransparency="True" 
+        WindowStartupLocation="CenterScreen">
+    <Border CornerRadius="20" Background="White" Padding="20">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Название услуги:" FontSize="20" FontFamily="Times New Roman"/>
+            <TextBox x:Name="NameBox" Grid.Row="1" FontSize="20" Margin="0,5,0,10"/>
+
+            <TextBlock Grid.Row="2" Text="Цена (руб):" FontSize="20" FontFamily="Times New Roman"/>
+            <TextBox x:Name="PriceBox" Grid.Row="3" FontSize="20" Margin="0,5,0,20"/>
+
+            <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="OK" FontSize="18" Height="30" Width="50" Margin="0,0,10,0" Click="Ok_Click" Style="{StaticResource NemuBtn}"/>
+                <Button Content="Отмена" FontSize="18" Height="30" Width="80" Click="Cancel_Click" Style="{StaticResource NemuBtn}"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

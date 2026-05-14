@@ -15,24 +15,38 @@ using System.Windows.Shapes;
 namespace Govno_2._0.View.Windows.Edit
 {
     /// <summary>
-    /// Логика взаимодействия для ChangeMail.xaml
+    /// Логика взаимодействия для ChangePassword.xaml
     /// </summary>
-    public partial class ChangeMail : Window
+    public partial class ChangePassword : Window
     {
-        public ChangeMail()
+        public ChangePassword()
         {
             InitializeComponent();
         }
 
-        private void PassChangeBtn_Click(object sender, RoutedEventArgs e)
+        private void MailChangeBtn_Click(object sender, RoutedEventArgs e)
         {
-            WaitAdmin waitAdmin = new WaitAdmin();
-            waitAdmin.ShowDialog();
-            if (DialogResult == true)
+            if (NewMailTb.Text == NewMailAccesTb.Text)
             {
-
+                WaitAdmin waitAdmin = new WaitAdmin();
+                waitAdmin.ShowDialog();
+                if (DialogResult == true)
+                {
+                    App.currentUser.Mail = NewMailAccesTb.Text;
+                    App.context.SaveChanges();
+                    DialogResult = true;
+                }
+                Close();
             }
-            Close();
+            else
+            {
+                MessageBox.Show("Пароли не совпадают");
+            }
+        }
+
+        private void CancelBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Govno_2._0.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,24 +16,38 @@ using System.Windows.Shapes;
 namespace Govno_2._0.View.Windows.Edit
 {
     /// <summary>
-    /// Логика взаимодействия для ChangePassword.xaml
+    /// Логика взаимодействия для ChangeMail.xaml
     /// </summary>
-    public partial class ChangePassword : Window
+    public partial class ChangeMail : Window
     {
-        public ChangePassword()
+        public ChangeMail()
         {
             InitializeComponent();
         }
 
-        private void MailChangeBtn_Click(object sender, RoutedEventArgs e)
+        private void PassChangeBtn_Click(object sender, RoutedEventArgs e)
         {
-            WaitAdmin waitAdmin = new WaitAdmin();
-            waitAdmin.ShowDialog();
-            if (DialogResult == true)
+            if (NewPassTb.Text == NewPassAccesTb.Text)
             {
-
+                WaitAdmin waitAdmin = new WaitAdmin();
+                waitAdmin.ShowDialog();
+                if (DialogResult == true)
+                {
+                    App.currentUser.Password = NewPassAccesTb.Text;
+                    App.context.SaveChanges();
+                    DialogResult = true;
+                }
+                Close();
             }
-            Close();
+            else
+            {
+                MessageBox.Show("Пароли не совпадают");
+            }
+        }
+
+        private void CancelBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

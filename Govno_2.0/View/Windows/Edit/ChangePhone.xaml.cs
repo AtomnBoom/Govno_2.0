@@ -26,13 +26,27 @@ namespace Govno_2._0.View.Windows.Edit
 
         private void PhoneChangeBtn_Click(object sender, RoutedEventArgs e)
         {
-            WaitAdmin waitAdmin = new WaitAdmin();
-            waitAdmin.ShowDialog();
-            if (DialogResult == true)
+            if (AgePhoneTb.Text == App.currentUser.Phone && !string.IsNullOrWhiteSpace(NewPhoneTb.Text))
             {
-
+                WaitAdmin waitAdmin = new WaitAdmin();
+                waitAdmin.ShowDialog();
+                if (DialogResult == true)
+                {
+                    App.currentUser.Phone = NewPhoneTb.Text;
+                    App.context.SaveChanges();
+                    DialogResult = true;
+                }
+                Close();
             }
-            Close();
+            else
+            {
+                MessageBox.Show("Пароли не совпадают");
+            }
+        }
+
+        private void CancelBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
