@@ -17,9 +17,9 @@ namespace Govno_2._0.View.Windows.Edit
     /// <summary>
     /// Логика взаимодействия для ChangePassword.xaml
     /// </summary>
-    public partial class ChangePassword : Window
+    public partial class ChangeMail : Window
     {
-        public ChangePassword()
+        public ChangeMail()
         {
             InitializeComponent();
         }

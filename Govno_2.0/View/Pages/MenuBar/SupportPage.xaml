@@ -42,7 +42,7 @@
                             Margin="20,15"
                             Cursor="Hand"
                             Style="{StaticResource NemuBtn}" 
-                            MouseLeftButtonUp="Profile_Click"/>
+                            Click="MenuProfile_Click"/>
 
                     <Button Name="MenuSettings" 
                             Content="Настройки" 
@@ -51,7 +51,7 @@
                             Margin="20,15"
                             Cursor="Hand"
                             Style="{StaticResource NemuBtn}" 
-                            MouseLeftButtonUp="Settings_Click"/>
+                            Click="MenuSettings_Click"/>
                 </StackPanel>
             </Grid>
         </Border>

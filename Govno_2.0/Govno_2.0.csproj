@@ -113,6 +113,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="View\Pages\Edit\EditPriceList.xaml.cs">
+      <DependentUpon>EditPriceList.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Pages\OrderListPage.xaml.cs">
       <DependentUpon>OrderListPage.xaml</DependentUpon>
     </Compile>
@@ -146,14 +149,14 @@
     <Compile Include="View\Windows\Edit\EditOrder.xaml.cs">
       <DependentUpon>EditOrder.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Windows\Edit\EditPriceList.xaml.cs">
-      <DependentUpon>EditPriceList.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\Windows\Edit\SelectClientWindow.xaml.cs">
       <DependentUpon>SelectClientWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Windows\Edit\ServiceEditDialog.xaml.cs">
       <DependentUpon>ServiceEditDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\Edit\ServiceGroupEditDialog.xaml.cs">
+      <DependentUpon>ServiceGroupEditDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Windows\Edit\ServiceSelect.xaml.cs">
       <DependentUpon>ServiceSelect.xaml</DependentUpon>
@@ -210,6 +213,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="View\Pages\Edit\EditPriceList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Pages\OrderListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -254,15 +261,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Windows\Edit\EditPriceList.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\Windows\Edit\SelectClientWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Windows\Edit\ServiceEditDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\Edit\ServiceGroupEditDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,7 +1,9 @@
 ﻿using Govno_2._0.Models;
+using Govno_2._0.View.Windows.Edit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -11,15 +13,15 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Data.Entity;
 
-namespace Govno_2._0.View.Windows.Edit
+namespace Govno_2._0.View.Pages.Edit
 {
     /// <summary>
     /// Логика взаимодействия для EditPriceList.xaml
     /// </summary>
-    public partial class EditPriceList : Window
+    public partial class EditPriceList : Page
     {
         public EditPriceList()
         {
@@ -74,63 +76,59 @@ namespace Govno_2._0.View.Windows.Edit
 
         private void AddGroup_Click(object sender, RoutedEventArgs e)
         {
-            string newName = ShowInputDialog("Введите название новой категории:", "Добавление категории");
-            if (!string.IsNullOrWhiteSpace(newName))
+            var group = GroupsListBox.SelectedItem as SGroup;
+            
+            var dialog = new ServiceGroupEditDialog();
+            if (dialog.ShowDialog() == true)
             {
-                if (App.context.SGroup.Any(g => g.Name == newName))
+                var newGroup = new SGroup
                 {
-                    MessageBox.Show("Категория с таким названием уже существует.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
-                    return;
-                }
-                var newGroup = new SGroup { Name = newName };
+                    Name = dialog.GroupName
+                };
                 App.context.SGroup.Add(newGroup);
                 App.context.SaveChanges();
                 LoadGroups();
-                GroupsListBox.SelectedItem = newGroup;
             }
         }
 
         private void EditGroup_Click(object sender, RoutedEventArgs e)
         {
+
             var group = GroupsListBox.SelectedItem as SGroup;
             if (group == null)
             {
                 MessageBox.Show("Выберите категорию для редактирования.", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
             }
-            string newName = ShowInputDialog("Редактирование названия категории:", "Редактирование", group.Name);
-            if (!string.IsNullOrWhiteSpace(newName) && newName != group.Name)
+            var dialog = new ServiceGroupEditDialog(group.Name);
+            if (dialog.ShowDialog() == true)
             {
-                if (App.context.SGroup.Any(g => g.Name == newName && g.ID != group.ID))
-                {
-                    MessageBox.Show("Категория с таким названием уже существует.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
-                    return;
-                }
-                group.Name = newName;
+                group.Name = dialog.GroupName;
                 App.context.SaveChanges();
                 LoadGroups();
-                GroupsListBox.SelectedItem = group;
             }
         }
 
         private void DeleteGroup_Click(object sender, RoutedEventArgs e)
         {
-            var group = GroupsListBox.SelectedItem as SGroup;
-            if (group == null)
+            try
             {
-                MessageBox.Show("Выберите категорию для удаления.", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
-                return;
-            }
-            if (group.Services != null && group.Services.Any())
-            {
-                MessageBox.Show("Нельзя удалить категорию, содержащую услуги. Сначала удалите все услуги внутри неё.", "Запрещено", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
-            if (MessageBox.Show($"Удалить категорию \"{group.Name}\"?", "Подтверждение", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
-            {
-                App.context.SGroup.Remove(group);
-                App.context.SaveChanges();
+                var group = GroupsListBox.SelectedItem as SGroup;
+                if (group == null)
+                {
+                    MessageBox.Show("Выберите категорию для удаления.", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
+                    return;
+                }
+                if (MessageBox.Show($"Удалить категорию \"{group.Name}\"?", "Подтверждение", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                {
+                    App.context.SGroup.Remove(group);
+                    App.context.SaveChanges();
+                }
                 LoadGroups();
+            }
+            catch
+            {
+                MessageBox.Show("Неудается удалить категорю в которой существуют услуги, удалите услуги в категории а затем попробуйте снова");
             }
         }
 
@@ -198,58 +196,7 @@ namespace Govno_2._0.View.Windows.Edit
 
         private void BackToMainBtn_Click(object sender, RoutedEventArgs e)
         {
-            this.DialogResult = true;
-            this.Close();
-        }
-
-        private string ShowInputDialog(string message, string title, string defaultValue = "")
-        {
-            var dialog = new InputDialog(message, title, defaultValue);
-            if (dialog.ShowDialog() == true)
-                return dialog.Result;
-            return null;
-        }
-    }
-
-    public class InputDialog : Window
-    {
-        public string Result { get; private set; }
-        private TextBox inputBox;
-
-        public InputDialog(string message, string title, string defaultValue)
-        {
-            this.Title = title;
-            this.WindowStartupLocation = WindowStartupLocation.CenterOwner;
-            this.Width = 400;
-            this.Height = 180;
-            this.Background = System.Windows.Media.Brushes.White;
-            this.ResizeMode = ResizeMode.NoResize;
-
-            var grid = new Grid();
-            grid.Margin = new Thickness(10);
-            grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
-            grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
-            grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
-
-            var messageBlock = new TextBlock { Text = message, FontSize = 16, Margin = new Thickness(0, 0, 0, 10) };
-            Grid.SetRow(messageBlock, 0);
-            grid.Children.Add(messageBlock);
-
-            inputBox = new TextBox { Text = defaultValue, FontSize = 16, Margin = new Thickness(0, 0, 0, 10) };
-            Grid.SetRow(inputBox, 1);
-            grid.Children.Add(inputBox);
-
-            var buttonPanel = new StackPanel { Orientation = Orientation.Horizontal, HorizontalAlignment = HorizontalAlignment.Right };
-            var okBtn = new Button { Content = "OK", Width = 70, Margin = new Thickness(0, 0, 10, 0), Style = (Style)Application.Current.Resources["NemuBtn"] };
-            okBtn.Click += (s, e) => { Result = inputBox.Text; DialogResult = true; };
-            var cancelBtn = new Button { Content = "Отмена", Width = 70, Style = (Style)Application.Current.Resources["NemuBtn"] };
-            cancelBtn.Click += (s, e) => { DialogResult = false; };
-            buttonPanel.Children.Add(okBtn);
-            buttonPanel.Children.Add(cancelBtn);
-            Grid.SetRow(buttonPanel, 2);
-            grid.Children.Add(buttonPanel);
-
-            this.Content = grid;
+            App.MainFrame.Navigate(new PriceListPage());
         }
     }
 }

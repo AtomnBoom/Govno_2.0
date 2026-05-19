@@ -29,7 +29,7 @@
                             Margin="20,10"
                             Cursor="Hand"
                             Style="{StaticResource NemuBtn}" 
-                            MouseLeftButtonUp="Support_Click"/>
+                            Click="MenuSupport_Click"/>
 
                     <Rectangle Height="2" Fill="#CCCCCC" Margin="15,5"/>
 
@@ -40,7 +40,7 @@
                             Margin="20,15"
                             Cursor="Hand"
                             Style="{StaticResource NemuBtn}" 
-                            MouseLeftButtonUp="Profile_Click"/>
+                            Click="MenuProfile_Click"/>
 
                     <TextBlock Name="MenuSettings" 
                                Text="Настройки" 
@@ -78,8 +78,8 @@
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.Column="0" Text="Пароль" FontSize="32" FontFamily="Times New Roman" VerticalAlignment="Center"/>
-                <TextBlock Grid.Column="2" Text="***********" FontSize="32" FontFamily="Times New Roman" Foreground="#333"/>
-                <Button Name="PassChangeBtn" Grid.Column="4" Height="37" Click="PassChangeBtn_Click" Background="Transparent" BorderThickness="0">
+                <TextBlock Grid.Column="2" Text="********" FontSize="32" FontFamily="Times New Roman" Foreground="#333"/>
+                <Button Name="PassChangeBtn" Grid.Column="4" Height="37" Click="PassChangeBtn_Click"  Background="Transparent" BorderThickness="0">
                     <Image Source="/Resources/change.png"/>
                 </Button>
             </Grid>
@@ -95,7 +95,7 @@
                 <TextBlock Grid.Column="0" Text="Телефон" FontSize="32" FontFamily="Times New Roman" VerticalAlignment="Center"/>
                 <TextBlock Name="PhoneTbl" Grid.Column="2" Text="{Binding CurrentUser.Phone}" 
                          FontSize="32" FontFamily="Times New Roman" Padding="5,3"/>
-                <Button Name="PhoneChangeBtn" Grid.Column="4" Height="37" Click="PhoneChangeBtn_Click" Background="Transparent" BorderThickness="0">
+                <Button Name="PhoneChangeBtn" Grid.Column="4" Height="37" Click="PhoneChangeBtn_Click"  Background="Transparent" BorderThickness="0">
                     <Image Source="/Resources/change.png"/>
                 </Button>
             </Grid>
@@ -111,7 +111,7 @@
                 <TextBlock Grid.Column="0" Text="Эл.Почта" FontSize="32" FontFamily="Times New Roman" VerticalAlignment="Center"/>
                 <TextBlock Name="MailTbl" Grid.Column="2" Text="{Binding CurrentUser.Mail}" 
                          FontSize="32" FontFamily="Times New Roman" Padding="5,3"/>
-                <Button Name="MailChangeBtn" Grid.Column="4" Height="37" Click="MailChangeBtn_Click" Background="Transparent" BorderThickness="0">
+                <Button Name="MailChangeBtn" Grid.Column="4" Height="37" Click="MailChangeBtn_Click"  Background="Transparent" BorderThickness="0">
                     <Image Source="/Resources/change.png"/>
                 </Button>
             </Grid>

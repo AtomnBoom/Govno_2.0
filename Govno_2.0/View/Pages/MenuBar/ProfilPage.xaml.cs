@@ -61,13 +61,14 @@ namespace Govno_2._0.View.Pages
             }
         }
 
-        private void Support_Click(object sender, MouseButtonEventArgs e)
-        {
-            App.MainFrame.Navigate(new SupportPage());
-        }
-        private void Settings_Click(object sender, MouseButtonEventArgs e)
+        private void MenuSettings_Click(object sender, RoutedEventArgs e)
         {
             App.MainFrame.Navigate(new SettingsPage());
+        }
+
+        private void MenuSupport_Click(object sender, RoutedEventArgs e)
+        {
+            App.MainFrame.Navigate(new SupportPage());
         }
     }
 }

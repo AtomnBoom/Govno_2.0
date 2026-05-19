@@ -49,11 +49,13 @@ namespace Govno_2._0.View.Pages
                 MessageBox.Show("Ошибка отправки заявки");
             }
         }
-        private void Profile_Click(object sender, MouseButtonEventArgs e)
+
+        private void MenuProfile_Click(object sender, RoutedEventArgs e)
         {
             App.MainFrame.Navigate(new ProfilPage());
         }
-        private void Settings_Click(object sender, MouseButtonEventArgs e)
+
+        private void MenuSettings_Click(object sender, RoutedEventArgs e)
         {
             App.MainFrame.Navigate(new SettingsPage());
         }

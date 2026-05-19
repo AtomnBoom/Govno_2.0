@@ -30,7 +30,7 @@
                        Margin="20,10"
                        Cursor="Hand"
                        Style="{StaticResource NemuBtn}" 
-                       MouseLeftButtonUp="Support_Click"/>
+                       Click="MenuSupport_Click"/>
 
                     <Rectangle Height="2" Fill="#CCCCCC" Margin="15,5"/>
 
@@ -51,7 +51,7 @@
                        Margin="20,15"
                        Cursor="Hand"
                        Style="{StaticResource NemuBtn}" 
-                       MouseLeftButtonUp="Settings_Click"/>
+                       Click="MenuSettings_Click"/>
                 </StackPanel>
             </Grid>
         </Border>
@@ -90,7 +90,7 @@
                 <Grid Margin="20,20,0,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto"/>
-                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="120"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
 
@@ -103,12 +103,12 @@
                         <TextBlock Text="График работы : " FontSize="32" FontFamily="Times New Roman"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Column="1" HorizontalAlignment="Center">
-                        <TextBlock Text="-" FontSize="32" FontFamily="Times New Roman" Margin="0,8"/>
-                        <TextBlock Text="-" FontSize="32" FontFamily="Times New Roman" Margin="0,8"/>
-                        <TextBlock Text="-" FontSize="32" FontFamily="Times New Roman" Margin="0,8"/>
-                        <TextBlock Text="-" FontSize="32" FontFamily="Times New Roman" Margin="0,8"/>
-                        <TextBlock Text="-" FontSize="32" FontFamily="Times New Roman" Margin="0,8"/>
+                    <StackPanel Grid.Column="1" HorizontalAlignment="Left">
+                        <TextBlock Text="-" FontSize="32" FontFamily="Times New Roman" Margin="40,8"/>
+                        <TextBlock Text="-" FontSize="32" FontFamily="Times New Roman" Margin="40,8"/>
+                        <TextBlock Text="-" FontSize="32" FontFamily="Times New Roman" Margin="40,8"/>
+                        <TextBlock Text="-" FontSize="32" FontFamily="Times New Roman" Margin="40,8"/>
+                        <TextBlock Text="-" FontSize="32" FontFamily="Times New Roman" Margin="40,8"/>
                     </StackPanel>
 
                     <StackPanel Grid.Column="2" Orientation="Vertical" HorizontalAlignment="Left">

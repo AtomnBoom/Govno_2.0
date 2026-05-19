@@ -1,4 +1,4 @@
-﻿using Govno_2._0.View.Windows.Edit;
+﻿using Govno_2._0.View.Pages.Edit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,12 +53,7 @@ namespace Govno_2._0.View.Pages
 
         private void EditServiceBtn_Click(object sender, RoutedEventArgs e)
         {
-            EditPriceList editPriceList = new EditPriceList();
-
-            if (editPriceList.ShowDialog() == true)
-            {
-                LoadPriceList();
-            }
+            App.MainFrame.Navigate(new EditPriceList());
         }
     }
 }
