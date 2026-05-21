@@ -55,8 +55,7 @@ namespace Govno_2._0.View.Windows.Edit
         {
             if (SelectedClient == null)
             {
-                MessageBox.Show("Выберите клиента из списка!", "Ошибка",
-                              MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Выберите клиента из списка!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 

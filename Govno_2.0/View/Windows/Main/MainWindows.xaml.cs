@@ -78,12 +78,12 @@ namespace Govno_2._0.View.Windows
 
         private void ClientBtn_Click(object sender, RoutedEventArgs e)
         {
-            MainF.Navigate(new OrdersPage());
+            MainF.Navigate(new ClientsPage());
         }
 
         private void HistoryBtn_Click(object sender, RoutedEventArgs e)
         {
-            MainF.Navigate(new OrdersPage());
+            MainF.Navigate(new HistoryPage());
         }
     }
 }

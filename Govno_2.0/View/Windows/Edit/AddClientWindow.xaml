@@ -22,7 +22,7 @@
                 <Image Source="/Resources/Cancel.png"/>
             </Button>
 
-            <Label Content="Новый Клиент" FontSize="24" FontFamily="Times New Roman" HorizontalAlignment="Center" Foreground="red"/>
+            <Label Name="TitleLb" Content="Новый Клиент" FontSize="24" FontFamily="Times New Roman" HorizontalAlignment="Center" Foreground="red"/>
 
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
@@ -31,7 +31,7 @@
                 </Grid.ColumnDefinitions>
                 <TextBlock Text="ФИО -" FontSize="20" FontFamily="Times New Roman" Background="Transparent" VerticalAlignment="Center"/>
                 <Border Grid.Column="1" Background="White" CornerRadius="15" Margin="0 5">
-                    <TextBox Name="FullNameTxt" BorderThickness="0" Background="Transparent" Margin="15 0" FontSize="16"/>
+                    <TextBox Name="FullNameTxt" BorderThickness="0" Background="Transparent" Margin="15 0" FontSize="18" VerticalAlignment="Center"/>
                 </Border>
             </Grid>
 
@@ -42,7 +42,7 @@
                 </Grid.ColumnDefinitions>
                 <TextBlock Text="Телефон -" FontSize="20" FontFamily="Times New Roman" Background="Transparent" VerticalAlignment="Center"/>
                 <Border Grid.Column="1" Background="White" CornerRadius="15" Margin="0 5">
-                    <TextBox Name="PhoneTxt" BorderThickness="0" Background="Transparent" Margin="15 0" FontSize="16" MaxLength="12"/>
+                    <TextBox Name="PhoneTxt" BorderThickness="0" Background="Transparent" Margin="15 0" FontSize="18" MaxLength="12" VerticalAlignment="Center"/>
                 </Border>
             </Grid>
 
