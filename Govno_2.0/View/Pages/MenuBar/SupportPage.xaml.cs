@@ -39,7 +39,7 @@ namespace Govno_2._0.View.Pages
             WaitAdmin waitAdmin = new WaitAdmin();
             if (waitAdmin.ShowDialog() == true)
             {
-                MessageBox.Show($"Заявка отправлена администратору!\n\nПроблема: {selectedProblem}\nКомментарий: {(string.IsNullOrEmpty(comment) ? "—" : comment)}", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show($"Заявка принята администратором!\n\nПроблема: {selectedProblem}\nКомментарий: {(string.IsNullOrEmpty(comment) ? "—" : comment)}", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
 
                 ProblemsListBox.SelectedItem = null;
                 CommentBox.Clear();

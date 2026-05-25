@@ -56,7 +56,7 @@
                 </Grid.ColumnDefinitions>
                 <TextBlock Text="Стоимость -" FontSize="20" FontFamily="Times New Roman" Background="Transparent" VerticalAlignment="Center"/>
                 <Border Grid.Column="1" Background="White" CornerRadius="15" Margin="0 5">
-                    <TextBlock Name="PriceTbl" Text="{Binding }" Background="Transparent" Margin="15 0"/>
+                    <TextBlock Name="PriceTbl" VerticalAlignment="Center" FontSize="16" Text="{Binding }" Background="Transparent" Margin="15 0"/>
                 </Border>
             </Grid>
             
