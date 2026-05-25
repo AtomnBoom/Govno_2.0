@@ -29,6 +29,7 @@ namespace Govno_2._0.View.Pages
 
         private void LoadData()
         {
+            LoginTbl.Text = App.currentUser.Login;
             PhoneTbl.Text = App.currentUser.Phone;
             MailTbl.Text = App.currentUser.Mail;
         }
