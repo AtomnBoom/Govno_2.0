@@ -29,8 +29,8 @@ namespace Govno_2._0.View.Windows.Edit
             if (NewMailTb.Text == NewMailAccesTb.Text)
             {
                 WaitAdmin waitAdmin = new WaitAdmin();
-                waitAdmin.ShowDialog();
-                if (DialogResult == true)
+                
+                if (waitAdmin.ShowDialog() == true)
                 {
                     App.currentUser.Mail = NewMailAccesTb.Text;
                     App.context.SaveChanges();

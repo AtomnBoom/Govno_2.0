@@ -30,8 +30,8 @@ namespace Govno_2._0.View.Windows.Edit
             if (NewPassTb.Text == NewPassAccesTb.Text)
             {
                 WaitAdmin waitAdmin = new WaitAdmin();
-                waitAdmin.ShowDialog();
-                if (DialogResult == true)
+
+                if (waitAdmin.ShowDialog()==true)
                 {
                     App.currentUser.Password = NewPassAccesTb.Text;
                     App.context.SaveChanges();

@@ -122,7 +122,7 @@
                                FontSize="32" FontFamily="Times New Roman" Margin="0,8"/>
                         <TextBlock Text="{Binding CurrentUser.UserType.PayCount, StringFormat={}{0} руб.}" 
                                FontSize="32" FontFamily="Times New Roman" Margin="0,8"/>
-                        <TextBlock Text="{Binding CurrentUser.UserType.DaysWorks}" FontSize="24" FontFamily="Times New Roman"/>
+                        <TextBlock Text="{Binding CurrentUser.UserType.DaysWorks}" FontSize="30" FontFamily="Times New Roman"/>
                     </StackPanel>
                 </Grid>
             </StackPanel>

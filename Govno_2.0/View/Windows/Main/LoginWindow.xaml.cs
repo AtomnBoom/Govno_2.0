@@ -39,7 +39,7 @@ namespace Govno_2._0.View.Windows
             }
             else
             {
-                var user = App.context.User.FirstOrDefault(u => (u.Login == LoginTb.Text && u.Password == PassPb.Password) || (u.Mail == LoginTb.Text && u.Password == PassPb.Password));
+                var user = App.context.User.FirstOrDefault(u => (u.Login == LoginTb.Text && (u.Password == PassPb.Password || u.Password == PassTb.Text)) || (u.Mail == LoginTb.Text && (u.Password == PassPb.Password || u.Password == PassTb.Text)));
                 if (user != null)
                 {
                     if (RemCb.IsChecked == true)

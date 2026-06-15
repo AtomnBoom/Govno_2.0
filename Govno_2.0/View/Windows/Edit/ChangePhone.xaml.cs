@@ -29,8 +29,8 @@ namespace Govno_2._0.View.Windows.Edit
             if (AgePhoneTb.Text == App.currentUser.Phone && !string.IsNullOrWhiteSpace(NewPhoneTb.Text))
             {
                 WaitAdmin waitAdmin = new WaitAdmin();
-                waitAdmin.ShowDialog();
-                if (DialogResult == true)
+                
+                if (waitAdmin.ShowDialog() == true)
                 {
                     App.currentUser.Phone = NewPhoneTb.Text;
                     App.context.SaveChanges();

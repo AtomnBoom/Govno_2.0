@@ -17,7 +17,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Number" Type="int" Nullable="false" />
           <Property Name="DateCreate" Type="date" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -30,7 +30,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="OrderId" Type="int" Nullable="false" />
           <Property Name="ServiceId" Type="int" Nullable="false" />
         </EntityType>
@@ -38,7 +38,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="GoupName" Type="int" Nullable="false" />
@@ -47,7 +47,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <EntityType Name="StatusOrders">
@@ -210,10 +210,10 @@
           <Property Name="Client" Type="Int32" Nullable="false" />
           <Property Name="Status" Type="Int32" Nullable="false" />
           <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="TotalPrice" Type="Decimal" Precision="18" Scale="2" />
           <NavigationProperty Name="Clients" Relationship="Self.FK_Orders_Clients" FromRole="Orders" ToRole="Clients" />
           <NavigationProperty Name="StatusOrders" Relationship="Self.FK_Orders_StatusOrders" FromRole="Orders" ToRole="StatusOrders" />
           <NavigationProperty Name="OrdersServices" Relationship="Self.FK_OrdersServices_Orders1" FromRole="Orders" ToRole="OrdersServices" />
-          <Property Name="TotalPrice" Type="Decimal" Precision="18" Scale="2" />
         </EntityType>
         <EntityType Name="OrdersServices">
           <Key>
@@ -401,7 +401,6 @@
           <EntitySetMapping Name="Orders">
             <EntityTypeMapping TypeName="FixitModel.Orders">
               <MappingFragment StoreEntitySet="Orders">
-                <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Number" ColumnName="Number" />
                 <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
@@ -409,6 +408,7 @@
                 <ScalarProperty Name="Client" ColumnName="Client" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
