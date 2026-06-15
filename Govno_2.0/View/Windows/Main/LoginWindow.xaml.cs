@@ -39,34 +39,39 @@ namespace Govno_2._0.View.Windows
             }
             else
             {
-                var user = App.context.User.FirstOrDefault(u => (u.Login == LoginTb.Text && (u.Password == PassPb.Password || u.Password == PassTb.Text)) || (u.Mail == LoginTb.Text && (u.Password == PassPb.Password || u.Password == PassTb.Text)));
-                if (user != null)
+                if (PassP.Visibility == Visibility.Collapsed)
                 {
-                    if (RemCb.IsChecked == true)
+                    PassPb.Password = PassTb.Text;
+                    var user = App.context.User.FirstOrDefault(u => (u.Login == LoginTb.Text && u.Password == PassPb.Password) || (u.Mail == LoginTb.Text && u.Password == PassPb.Password));
+                    if (user != null)
                     {
-                        Properties.Settings.Default.LoginValue = LoginTb.Text;
-                        Properties.Settings.Default.PasswordValue = PassPb.Password;
-                        Properties.Settings.Default.Save();
+
+                        if (RemCb.IsChecked == true)
+                        {
+                            Properties.Settings.Default.LoginValue = LoginTb.Text;
+                            Properties.Settings.Default.PasswordValue = PassPb.Password;
+                            Properties.Settings.Default.Save();
+                        }
+                        else
+                        {
+                            Properties.Settings.Default.LoginValue = string.Empty;
+                            Properties.Settings.Default.PasswordValue = string.Empty;
+                            Properties.Settings.Default.Save();
+                        }
+
+                        App.currentUser = user;
+                        Login login = new Login();
+                        login.ShowDialog();
+
+                        MainWindows main = new MainWindows();
+                        main.Show();
+
+                        Close();
                     }
                     else
                     {
-                        Properties.Settings.Default.LoginValue = string.Empty;
-                        Properties.Settings.Default.PasswordValue = string.Empty;
-                        Properties.Settings.Default.Save();
+                        MessageBox.Show("Введены некоректные данные!");
                     }
-
-                    App.currentUser = user;
-                    Login login = new Login();
-                    login.ShowDialog();
-
-                    MainWindows main = new MainWindows();
-                    main.Show();
-
-                    Close();
-                }
-                else
-                {
-                    MessageBox.Show("Введены некоректные данные!");
                 }
             }
         }
@@ -86,7 +91,7 @@ namespace Govno_2._0.View.Windows
         private void PassVisibleBtn_Click(object sender, RoutedEventArgs e)
         {
             PassPb.Password = PassTb.Text;
-            
+
             PassP.Visibility = Visibility.Visible;
             PassT.Visibility = Visibility.Collapsed;
             PassVisibleBtn.Visibility = Visibility.Visible;
