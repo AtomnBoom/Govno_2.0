@@ -42,36 +42,36 @@ namespace Govno_2._0.View.Windows
                 if (PassP.Visibility == Visibility.Collapsed)
                 {
                     PassPb.Password = PassTb.Text;
+                }
                     var user = App.context.User.FirstOrDefault(u => (u.Login == LoginTb.Text && u.Password == PassPb.Password) || (u.Mail == LoginTb.Text && u.Password == PassPb.Password));
-                    if (user != null)
+                if (user != null)
+                {
+
+                    if (RemCb.IsChecked == true)
                     {
-
-                        if (RemCb.IsChecked == true)
-                        {
-                            Properties.Settings.Default.LoginValue = LoginTb.Text;
-                            Properties.Settings.Default.PasswordValue = PassPb.Password;
-                            Properties.Settings.Default.Save();
-                        }
-                        else
-                        {
-                            Properties.Settings.Default.LoginValue = string.Empty;
-                            Properties.Settings.Default.PasswordValue = string.Empty;
-                            Properties.Settings.Default.Save();
-                        }
-
-                        App.currentUser = user;
-                        Login login = new Login();
-                        login.ShowDialog();
-
-                        MainWindows main = new MainWindows();
-                        main.Show();
-
-                        Close();
+                        Properties.Settings.Default.LoginValue = LoginTb.Text;
+                        Properties.Settings.Default.PasswordValue = PassPb.Password;
+                        Properties.Settings.Default.Save();
                     }
                     else
                     {
-                        MessageBox.Show("Введены некоректные данные!");
+                        Properties.Settings.Default.LoginValue = string.Empty;
+                        Properties.Settings.Default.PasswordValue = string.Empty;
+                        Properties.Settings.Default.Save();
                     }
+
+                    App.currentUser = user;
+                    Login login = new Login();
+                    login.ShowDialog();
+
+                    MainWindows main = new MainWindows();
+                    main.Show();
+
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Введены некоректные данные!");
                 }
             }
         }
